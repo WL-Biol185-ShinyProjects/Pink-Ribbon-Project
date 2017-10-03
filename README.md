@@ -1,2 +1,2 @@
 # Pink-Ribbon-Project
-Breast cancer stats app
+Breast cancer stats app; risk calculation
