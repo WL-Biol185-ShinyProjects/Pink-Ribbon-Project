@@ -12,19 +12,19 @@ fluidPage(
       selectInput(inputId = 'state', 
                   label = 'Select a State',
                   choices = unique(breast_cancerrates2$Area)
-                 )
-    ),
+                 ),
+
     selectInput(inputId = 'value',
-                label = "what_to_plot",
-                choices = colnames(breast_cancerrates2)[2:ncol(breast_cancerrates2)]),
+                label = 'what_to_plot',
+                choices = colnames(breast_cancerrates2)[2:ncol(breast_cancerrates2)])),
     
-    #Panel plot
-    mainPanel(
-      plotOutput(outputId = 'race_plot')
-      
+  #Panelplot
+  mainPanel(
+    plotOutput(outputId = "race_plot")
+      )
     )
   )
-)
+
 
    
   
