@@ -2,17 +2,22 @@ library(shiny)
 library(tidyverse)
 library(ggplot2)
 
-bcrates_race <- read.table("breast_cancerrates2.txt", header = TRUE)
+breast_cancerrates2 <- read.table("breast_cancerrates2.txt", header= TRUE)
+gathered_data <- gather(breast_cancerrates2, key = "Race", value = "Incidence", 2:5, na.rm= FALSE)
 
 # Define server logic required to draw a histogram
 function(input, output) {
   
   output$race_plot <- renderPlot({
   
-    breast_cancerrates2 %>%
-      race <- filter(colnames(breast_cancerrates2)[2:ncol(breast_cancerrates2)] == input$state) %>%
-      ggplot(race, aes(input$value, "Area")) + 
+    gathered_data %>%
+      filter("Area" == input$state) %>%
+      ggplot(aes(Race, Incidence)) + 
       geom_bar(stat = "identity")+
       theme(axis.text.x = element_text(angle = 60, hjust = 1))
   })  
-}
+  }
+
+  
+
+
