@@ -18,7 +18,7 @@ function(input, output) {
       filter(Area == input$State) %>%
       arrange(Incidence) %>%
       mutate(Race = factor(Race, levels = Race, ordered = TRUE)) %>%
-      ggplot(aes(Race, Incidence, color = Area)) + 
+      ggplot(aes(Race, Incidence, fill = Race)) + 
       geom_bar(stat = 'identity') + 
       theme(axis.text.x = element_text(angle = 60, hjust = 1))
 
