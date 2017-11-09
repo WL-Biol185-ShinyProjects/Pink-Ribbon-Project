@@ -7,6 +7,7 @@ read.csv("gathered_data_corrected")
 gathered_data <- gather(breastcancerates2, key = "Race", value = "Incidence", 2:5, na.rm= TRUE)
 breast_cancerrates2 <- read.csv("gathered_data_corrected", header= TRUE)
 
+
 # Define server logic required to draw a histogram
 function(input, output) {
   
@@ -23,6 +24,24 @@ function(input, output) {
 
   })  
   }
+
+#Server for map by county
+function(input, output) {
+  points <- breastcancer_bycounty_edited$County
+  
+  
+  output$bcmap <- renderLeaflet({
+    breastcancer_bycounty_edited %>%
+    leaflet() %>%
+      addProviderTiles(providers$OpenStreetMap)
+                       options = providerTileOptions(noWrap = TRUE) %>%
+                       addMarkers(lng= 39.8283, lat=98.5795, popup="Center of US")
+  
+  
+  
+  
+  })
+}
 
   
 
