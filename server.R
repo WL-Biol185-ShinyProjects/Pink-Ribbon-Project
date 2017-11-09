@@ -15,7 +15,7 @@ function(input, output) {
   
 
     gathered_data %>%
-      filter(Race == c("All", "White", "Black", "Hispanic")) %>%
+      filter(Area == input$State) %>%
       arrange(Incidence) %>%
       mutate(Race = factor(Race, levels = Race, ordered = TRUE)) %>%
       ggplot(aes(Race, Incidence, color = Area)) + 
@@ -25,6 +25,10 @@ function(input, output) {
   })  
   }
 
+
+
+
+  
 #Server for map by county
 function(input, output) {
   points <- breastcancer_bycounty_edited$County
@@ -32,17 +36,13 @@ function(input, output) {
   
   output$bcmap <- renderLeaflet({
     breastcancer_bycounty_edited %>%
-    leaflet() %>%
+      leaflet() %>%
       addProviderTiles(providers$OpenStreetMap)
-                       options = providerTileOptions(noWrap = TRUE) %>%
-                       addMarkers(lng= 39.8283, lat=98.5795, popup="Center of US")
-  
-  
-  
-  
+    options = providerTileOptions(noWrap = TRUE) %>%
+      addMarkers(lng= 39.8283, lat=98.5795, popup="Center of US")
+    
+    
+    
+    
   })
-}
-
-  
-
-
+} 
