@@ -1,6 +1,6 @@
 library(shiny)
 
-# Define UI for application that draws a histogram
+
 fluidPage(
   
   # Application title
@@ -9,17 +9,17 @@ fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      selectInput(inputId = 'state', 
+      selectInput(inputId = 'State', 
                   label = 'Select a State',
-                  choices = unique(gathered_data$Area)
-                 )
-      ),
+                  choices = sort(unique(gathered_data$Area)),
+                  selected = 1
+                   )
+              ),
     
- 
-  
 #Panelplot
 mainPanel(
-  plotOutput(outputId = "race_plot")
+  plotOutput(outputId = "RacePlot")
+
     )
   )
     
