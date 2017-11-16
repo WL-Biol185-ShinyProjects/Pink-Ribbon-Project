@@ -4,40 +4,27 @@ library(shiny)
 fluidPage(
   
   # Application title
-  titlePanel("Breast Cancer By State and Ethnicity"),
+  titlePanel("Deaths Per 100,000 Due to Breast Cancer By State and Ethnicity in 2014"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      selectInput(inputId = 'State', 
-                  label = 'Select a State',
-                  choices = sort(unique(gathered_data$Area)),
+      selectInput(inputId = 'Area', 
+                  label = 'Select an Area',
+                  choices = sort(unique(gathered_death$Area)),
                   selected = 1
+                  
                    )
               ),
     
 #Panelplot
 mainPanel(
-  plotOutput(outputId = "RacePlot")
+  plotOutput(outputId = "DeathPlot")
 
     )
   )
     
 )
-
-#UI for Map of Incidence by County
-fluidPage(
- titlePanel("Breast Cancer Map by County"),
-   
- 
- #Map for incidence by county
-   library(leaflet),
-     bcmap <- leaflet(data = breastcancer_bycounty_edited),
-        addTiles(bcmap),
-              setView(bcmap, 39.8283, 98.5795, zoom= 18),
-
- 
-        )
 
 
 
