@@ -32,14 +32,13 @@ fluidPage(
  
  #Map for incidence by county
    library(leaflet),
-     bcmap <- leaflet(data = breastcancer_bycounty_edited),
-        addTiles(bcmap),
-              setView(bcmap, 39.8283, 98.5795, zoom= 18),
+  library(maps) ,
+    mapStates = map("state", fill = TRUE, plot = FALSE), 
+ leaflet(data =breastcancer_bycounty_edited$County) %>%
+   addTiles() %>%
+   addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)
 
- 
-        )
-
-
+)
 
   
 
