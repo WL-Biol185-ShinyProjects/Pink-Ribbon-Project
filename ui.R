@@ -1,6 +1,5 @@
 library(shiny)
 
-
 fluidPage(
   
   # Application title
@@ -22,11 +21,13 @@ mainPanel(
 
     )
   )
-    
 )
+
+
 
 #UI for Map of Incidence by County
 fluidPage(
+<<<<<<< HEAD
  titlePanel("Breast Cancer Map by County"),
    
  
@@ -37,6 +38,21 @@ fluidPage(
  leaflet(data =breastcancer_bycounty_edited$County) %>%
    addTiles() %>%
    addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)
+=======
+  titlePanel("Breast Cancer Map by County"),
+  
+  
+  #Map for incidence by county
+  fluidPage(
+    leafletOutput("mymap"),
+    p(),
+    actionButton("recalc", "New points")
+  )
+  
+)
+
+
+>>>>>>> b517e0998da9e19f6b54fd1dda382db9e584ab2d
 
 )
 
