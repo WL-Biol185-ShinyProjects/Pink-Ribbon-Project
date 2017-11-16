@@ -26,23 +26,30 @@ function(input, output) {
   }
 
 
-
-
-  
 #Server for map by county
 function(input, output) {
-  points <- breastcancer_bycounty_edited$County
-  
-  
-  output$bcmap <- renderLeaflet({
-    breastcancer_bycounty_edited %>%
+    
+    points <- eventReactive(input$recalc)
+    # Reactive expression for the data subsetted to what the user selected
+    points() <- reactive({
+      breastcancer_bycounty_edited2$Average Annual Count >= input$range[1] & quakes$mag <= input$range[2]
+    })
+    
+    output$mymap <- renderLeaflet({
       leaflet() %>%
-      addProviderTiles(providers$OpenStreetMap)
-    options = providerTileOptions(noWrap = TRUE) %>%
-      addMarkers(lng= 39.8283, lat=98.5795, popup="Center of US")
+        addTiles() %>%
+        setView(lng= -79.44, lat= 37.78, zoom= 3) %>%
+        addProviderTiles(providers$OpenStreetMap)
+                         leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18)) %>%
+        addMarkers(lng= 174.768, lat=-36.852, popup="The birthplace of R")
+    })
+  }
+
+
+      
     
     
-    
-    
-  })
-} 
+
+
+  
+

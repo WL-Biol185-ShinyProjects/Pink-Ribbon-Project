@@ -1,6 +1,5 @@
 library(shiny)
 
-
 fluidPage(
   
   # Application title
@@ -22,22 +21,24 @@ mainPanel(
 
     )
   )
-    
 )
+
+
 
 #UI for Map of Incidence by County
 fluidPage(
- titlePanel("Breast Cancer Map by County"),
-   
- 
- #Map for incidence by county
-   library(leaflet),
-     bcmap <- leaflet(data = breastcancer_bycounty_edited),
-        addTiles(bcmap),
-              setView(bcmap, 39.8283, 98.5795, zoom= 18),
+  titlePanel("Breast Cancer Map by County"),
+  
+  
+  #Map for incidence by county
+  fluidPage(
+    leafletOutput("mymap"),
+    p(),
+    actionButton("recalc", "New points")
+  )
+  
+)
 
- 
-        )
 
 
 
