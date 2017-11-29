@@ -1,31 +1,33 @@
 library(shiny)
 library(leaflet)
-fluidPage(
+# fluidPage(
   
-  # Application title
-  titlePanel("Breast Cancer By State and Ethnicity"),
-  
-  # Sidebar with a slider input for number of bins 
-  sidebarLayout(
-    sidebarPanel(
-      selectInput(inputId = 'State', 
-                  label = 'Select a State',
-                  choices = sort(unique(gathered_data$Area)),
-                  selected = 1
-                   )
-              ),
-    
-#Panelplot
-mainPanel(
-  plotOutput(outputId = "RacePlot")
-
-    )
-  ),
+#   # Application title
+#   titlePanel("Breast Cancer By State and Ethnicity"),
+#   
+#   # Sidebar with a slider input for number of bins 
+#   sidebarLayout(
+#     sidebarPanel(
+#       selectInput(inputId = 'State', 
+#                   label = 'Select a State',
+#                   choices = sort(unique(gathered_data$Area)),
+#                   selected = 1
+#                    )
+#               ),
+#     
+# #Panelplot
+# mainPanel(
+#   plotOutput(outputId = "RacePlot")
+# 
+#     )
+#   ),
 
 
 
 
 #UI for Map of Incidence by County
+
+
 
 fluidPage(
   titlePanel("Breast Cancer Map by County"),
@@ -33,15 +35,15 @@ fluidPage(
     sidebarPanel(
       selectInput(inputId = 'state',
                   label = 'Select a State',
-                  choices = sort(unique(zip_codes_states$state)),
+                  choices = sort(unique(final_breastcancer$state)),
                   selected = 1)
     ),
 #PanelMap
   mainPanel(
     leafletOutput(outputId = "mymap")
-)
-    )
   )
+    )
+     )
 
 
 
@@ -68,6 +70,7 @@ fluidPage(
  #  
 
   
+<<<<<<< HEAD
   # Application title
   titlePanel("Breast Cancer Mortality Over Time"),
   
@@ -88,6 +91,28 @@ fluidPage(
     )
   )
 )
+=======
+#   # Application title
+#   titlePanel("Breast Cancer Mortality Over Time"),
+#   
+#   # Sidebar with a slider input for number of bins 
+#   sidebarLayout(
+#     sidebarPanel(
+#       selectInput(inputId = 'Age', 
+#                   label = 'Select an Age Category',
+#                   choices = sort(unique(gathered_death$Age)),
+#                   selected = 1
+#       )
+#     ),
+#     
+#     #Panelplot
+#     mainPanel(
+#       plotOutput(outputId = "DeathPlot")
+#       
+#     )
+#   )
+# )
+>>>>>>> 1f0fc30a3a5e8e258157e683c638e14bb1c0ec48
 
 
 
