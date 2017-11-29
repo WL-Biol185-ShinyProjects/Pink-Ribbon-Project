@@ -20,41 +20,54 @@ mainPanel(
   plotOutput(outputId = "RacePlot")
 
     )
-  )
-)
+  ),
+
 
 
 
 #UI for Map of Incidence by County
-fluidPage(
-<<<<<<< HEAD
- titlePanel("Breast Cancer Map by County"),
-   
- 
- #Map for incidence by county
-   library(leaflet),
-  library(maps) ,
-    mapStates = map("state", fill = TRUE, plot = FALSE), 
- leaflet(data =breastcancer_bycounty_edited$County) %>%
-   addTiles() %>%
-   addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)
-=======
-  titlePanel("Breast Cancer Map by County"),
+
+
+ # titlePanel("Breast Cancer Map by County"),
+ #   
+ # 
+ # #Map for incidence by county
+ #  library(leaflet),
+ #  library(maps) ,
+ #    mapStates = map("state", fill = TRUE, plot = FALSE), 
+ # leaflet(data =breastcancer_bycounty_edited$County) %>%
+ #   addTiles() %>%
+ #   addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE),
+ # 
+ #  
+
   
+  # Application title
+  titlePanel("Breast Cancer Mortality Over Time"),
   
-  #Map for incidence by county
-  fluidPage(
-    leafletOutput("mymap"),
-    p(),
-    actionButton("recalc", "New points")
+  # Sidebar with a slider input for number of bins 
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(inputId = 'Age', 
+                  label = 'Select an Age Category',
+                  choices = sort(unique(gathered_death$Age)),
+                  selected = 1
+      )
+    ),
+    
+    #Panelplot
+    mainPanel(
+      plotOutput(outputId = "DeathPlot")
+      
+    )
   )
-  
 )
 
 
->>>>>>> b517e0998da9e19f6b54fd1dda382db9e584ab2d
 
-)
+
+
+
 
   
 
