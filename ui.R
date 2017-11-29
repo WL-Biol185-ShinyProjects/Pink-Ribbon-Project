@@ -26,7 +26,7 @@ mainPanel(
 
 
 #UI for Map of Incidence by County
-<<<<<<< HEAD
+
 fluidPage(
   titlePanel("Breast Cancer Map by County"),
   sidebarLayout(
@@ -51,7 +51,7 @@ fluidPage(
   
   
 
-=======
+
 
 
  # titlePanel("Breast Cancer Map by County"),
@@ -88,7 +88,7 @@ fluidPage(
     )
   )
 )
->>>>>>> 1b2d55aaafa3ae754e45188fcd348e5fcdacef29
+
 
 
 

@@ -27,7 +27,7 @@ function(input, output) {
 
 
 #Server for map by county
-<<<<<<< HEAD
+
 
 function(input, output) {
     
