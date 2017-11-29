@@ -1,47 +1,47 @@
 library(shiny)
 library(leaflet)
-fluidPage(
+# fluidPage(
   
-  # Application title
-  titlePanel("Breast Cancer By State and Ethnicity"),
-  
-  # Sidebar with a slider input for number of bins 
-  sidebarLayout(
-    sidebarPanel(
-      selectInput(inputId = 'State', 
-                  label = 'Select a State',
-                  choices = sort(unique(gathered_data$Area)),
-                  selected = 1
-                   )
-              ),
-    
-#Panelplot
-mainPanel(
-  plotOutput(outputId = "RacePlot")
-
-    )
-  ),
+#   # Application title
+#   titlePanel("Breast Cancer By State and Ethnicity"),
+#   
+#   # Sidebar with a slider input for number of bins 
+#   sidebarLayout(
+#     sidebarPanel(
+#       selectInput(inputId = 'State', 
+#                   label = 'Select a State',
+#                   choices = sort(unique(gathered_data$Area)),
+#                   selected = 1
+#                    )
+#               ),
+#     
+# #Panelplot
+# mainPanel(
+#   plotOutput(outputId = "RacePlot")
+# 
+#     )
+#   ),
 
 
 
 
 #UI for Map of Incidence by County
-<<<<<<< HEAD
+read.table("Final Breast Cancer Table")
 fluidPage(
   titlePanel("Breast Cancer Map by County"),
   sidebarLayout(
     sidebarPanel(
       selectInput(inputId = 'state',
                   label = 'Select a State',
-                  choices = sort(unique(zip_codes_states$state)),
+                  choices = sort(unique(final_breastcancer$state)),
                   selected = 1)
     ),
 #PanelMap
   mainPanel(
     leafletOutput(outputId = "mymap")
-)
-    )
   )
+    )
+     )
 
 
 
@@ -51,7 +51,7 @@ fluidPage(
   
   
 
-=======
+
 
 
  # titlePanel("Breast Cancer Map by County"),
@@ -68,27 +68,27 @@ fluidPage(
  #  
 
   
-  # Application title
-  titlePanel("Breast Cancer Mortality Over Time"),
-  
-  # Sidebar with a slider input for number of bins 
-  sidebarLayout(
-    sidebarPanel(
-      selectInput(inputId = 'Age', 
-                  label = 'Select an Age Category',
-                  choices = sort(unique(gathered_death$Age)),
-                  selected = 1
-      )
-    ),
-    
-    #Panelplot
-    mainPanel(
-      plotOutput(outputId = "DeathPlot")
-      
-    )
-  )
-)
->>>>>>> 1b2d55aaafa3ae754e45188fcd348e5fcdacef29
+#   # Application title
+#   titlePanel("Breast Cancer Mortality Over Time"),
+#   
+#   # Sidebar with a slider input for number of bins 
+#   sidebarLayout(
+#     sidebarPanel(
+#       selectInput(inputId = 'Age', 
+#                   label = 'Select an Age Category',
+#                   choices = sort(unique(gathered_death$Age)),
+#                   selected = 1
+#       )
+#     ),
+#     
+#     #Panelplot
+#     mainPanel(
+#       plotOutput(outputId = "DeathPlot")
+#       
+#     )
+#   )
+# )
+
 
 
 
