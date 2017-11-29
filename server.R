@@ -1,12 +1,12 @@
 library(shiny)
 library(tidyverse)
 library(ggplot2)
-
+library(leaflet)
 
 read.csv("gathered_data_corrected")
 gathered_data <- gather(breastcancerates2, key = "Race", value = "Incidence", 2:5, na.rm= TRUE)
 breast_cancerrates2 <- read.csv("gathered_data_corrected", header= TRUE)
-
+View(zip_codes_states)
 
 # Define server logic required to draw a histogram
 function(input, output) {
@@ -27,21 +27,21 @@ function(input, output) {
 
 
 #Server for map by county
+
 function(input, output) {
     
-    points <- eventReactive(input$recalc)
-    # Reactive expression for the data subsetted to what the user selected
-    points() <- reactive({
-      breastcancer_bycounty_edited2$Average Annual Count >= input$range[1] & quakes$mag <= input$range[2]
-    })
-    
     output$mymap <- renderLeaflet({
-      leaflet() %>%
+      zip_codes_states %>%
+        na.omit(zip_codes_states) %>%
+        filter(!is.na(longitude)) %>%
+        filter(!is.na(latitude)) %>%
+        filter(state == input$state) %>%
+        arrange(county) %>%
+        leaflet(data = zip_codes_states) %>% 
+        setView(lng= -79.44, lat= 37.78, zoom= 20) %>%
         addTiles() %>%
-        setView(lng= -79.44, lat= 37.78, zoom= 3) %>%
-        addProviderTiles(providers$OpenStreetMap)
-                         leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18)) %>%
-        addMarkers(lng= 174.768, lat=-36.852, popup="The birthplace of R")
+        addMarkers(label = ~`Recent 5-Year Trend in Incidence Rates`, clusterOptions = markerClusterOptions())
+    
     })
   }
 
