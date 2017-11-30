@@ -6,7 +6,8 @@ library(leaflet)
 read.csv("gathered_data_corrected")
 gathered_data <- gather(breastcancerates2, key = "Race", value = "Incidence", 2:4, na.rm= TRUE)
 breast_cancerrates2 <- read.csv("gathered_data_corrected", header= TRUE)
-View(zip_codes_states)
+read.table("Final Breast Cancer Table")
+View(final_breastcancer)
 
 # Define server logic required to draw a histogram
 # function(input, output) {
@@ -28,44 +29,30 @@ View(zip_codes_states)
 
 #Server for map by county
 
-
+popupColumn <- final_breastcancer %>%
+paste(County, p(), `Average Annual Count`)
 function(input, output) {
     
     output$mymap <- renderLeaflet({
-      final_breastcancer %>%
+      filteredMap <- final_breastcancer %>%
         na.omit(final_breastcancer) %>%
         filter(!is.na(longitude)) %>%
         filter(!is.na(latitude)) %>%
         filter(state == input$state) %>%
-        arrange(county) %>%
-        leaflet() %>% 
+        arrange(county)
+      leaflet(filteredMap) %>% 
         setView(lng= -98, lat= 41, zoom= 4) %>%
         addTiles() %>%
-        addMarkers(label = ~`Age-Adjusted Incidence Rate- cases per 100,000`, clusterOptions = markerClusterOptions())
+        addMarkers(label = ~filteredMap$`Average Annual Count`, clusterOptions = markerClusterOptions(), popup = as.character(filteredMap$`Average Annual Count`))
+    })                                                                                                                                                                                                                        
+}
+
+  
+
+
     
-    })
-  }
 
 
-      
-
-# zip_codes_states <- 
-#   zip_codes_states %>%
-#   left_join(breastcancer_bycounty_edited2, by = c("county" = "County"))
-# 
-# 
-# 
-#   
-# 
-#     output$mymap <- renderLeaflet({
-#       zip_codes_states %>%
-#         filter(condition %in% input$condition)
-#         addTiles() %>%
-#         setView(lng = -79.442778, lat = 37.783889, zoom = 5) %>%
-#         addProviderTiles(providers$OpenStreetMap)
-#                          leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18)) %>%
-#         addMarkers(lng= 174.768, lat=-36.852, popup="The birthplace of R")
-#     })
   
 
 

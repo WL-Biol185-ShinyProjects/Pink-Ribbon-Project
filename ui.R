@@ -36,14 +36,14 @@ fluidPage(
       selectInput(inputId = 'state',
                   label = 'Select a State',
                   choices = sort(unique(final_breastcancer$state)),
-                  selected = 1)
-    ),
-#PanelMap
-  mainPanel(
-    leafletOutput(outputId = "mymap")
-  )
+                  selected = 1)),
+#Map Output
+mainPanel(
+  leafletOutput(outputId = "mymap")
+        )
+      )
     )
-     )
+  
 
 
 
