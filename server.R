@@ -41,7 +41,7 @@ function(input, output) {
         leaflet() %>% 
         setView(lng= -98, lat= 41, zoom= 4) %>%
         addTiles() %>%
-        addMarkers(label = ~`Recent 5-Year Trend in Incidence Rates`, clusterOptions = markerClusterOptions())
+        addMarkers(label = ~`Age-Adjusted Incidence Rate- cases per 100,000`, clusterOptions = markerClusterOptions())
     
     })
   }
