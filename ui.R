@@ -28,7 +28,7 @@ library(leaflet)
 #UI for Map of Incidence by County
 
 
-
+read.table("Final Breast Cancer Table")
 fluidPage(
   titlePanel("Breast Cancer Map by County"),
   sidebarLayout(
@@ -70,28 +70,7 @@ fluidPage(
  #  
 
   
-<<<<<<< HEAD
-  # Application title
-  titlePanel("Breast Cancer Mortality Over Time"),
-  
-  # Sidebar with a slider input for number of bins 
-  sidebarLayout(
-    sidebarPanel(
-      selectInput(inputId = 'Age', 
-                  label = 'Select an Age Category',
-                  choices = sort(unique(gathered_death$Age)),
-                  selected = 1
-      )
-    ),
-    
-    #Panelplot
-    mainPanel(
-      plotOutput(outputId = "DeathPlot")
-      
-    )
-  )
-)
-=======
+
 #   # Application title
 #   titlePanel("Breast Cancer Mortality Over Time"),
 #   
@@ -112,7 +91,28 @@ fluidPage(
 #     )
 #   )
 # )
->>>>>>> 1f0fc30a3a5e8e258157e683c638e14bb1c0ec48
+# 
+# #   # Application title
+# #   titlePanel("Breast Cancer Mortality Over Time"),
+# #   
+# #   # Sidebar with a slider input for number of bins 
+# #   sidebarLayout(
+# #     sidebarPanel(
+# #       selectInput(inputId = 'Age', 
+# #                   label = 'Select an Age Category',
+# #                   choices = sort(unique(gathered_death$Age)),
+# #                   selected = 1
+# #       )
+# #     ),
+# #     
+# #     #Panelplot
+# #     mainPanel(
+# #       plotOutput(outputId = "DeathPlot")
+# #       
+# #     )
+# #   )
+# # )
+
 
 
 
