@@ -33,6 +33,10 @@ vignettes/*.pdf
 *.knit.md
 .Rproj.user
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+*.Rproj*
+>>>>>>> fcccb45acd2a4138cb34caad0ce3594eb2c650df
 =======
 
 >>>>>>> b517e0998da9e19f6b54fd1dda382db9e584ab2d

@@ -19,14 +19,19 @@ Michigan	117.0	114.3	126.7	73.4
 Detroit	132.0	132.9	134.2	126.0
 Ohio	126.6	127.0	125.7	70.2
 Wisconsin	126.9	126.7	132.4	73.6
+<<<<<<< HEAD
+West_North_Central	127.3,127.2	121.5	85.3
+Iowa,125.9	127.3	104.4	78.6
+=======
 West_North_Central	127.3	127.2	121.5	85.3
+>>>>>>> b517e0998da9e19f6b54fd1dda382db9e584ab2d
 Kansas	125.5	123.9	113.4	104.3
 Minnesota	130.9	130.2	113.1	91.8
 Missouri	128.9	128.9	130.0	77.2
 Nebraska	124.0	126.7	96.4	70.3
 North_Dakota	114.0	112.9	~	~
 South_Dakota	122.3	121.0	~	~
-South	119.8	118.9	122.3	90.4
+South,119.8	118.9	122.3	90.4
 South_Atlantic	123.1	122.2	124.0	97.2
 Delaware	136.9	137.3	137.5	-
 District_of_Columbia	139.6	127.5	135.3	80.3
@@ -51,7 +56,7 @@ Texas	110.7	111.5	113.3	84.6
 West	120.3	123.1	117.0	89.7
 Mountain	117.3	119.5	96.8	93.0
 Arizona	115.0	117.1	102.1	88.4
-Colorado	124.9	127.5	100.7	107.5
+Colorado,124.9	127.5	100.7	107.5
 Idaho	123.2	123.7	~	111.7
 Montana	128.0	128.9	~	~
 Nevada	106.6	106.9	101.9	72.4
@@ -67,4 +72,4 @@ Los_Angeles	110.3	113.1	121.8	82.5
 Hawaii	138.0	140.5	~	164.4
 Oregon	118.3	118.6	118.8	89.9
 Washington	134.8	136.3	112.6	89.4
-Seattle-Puget_Sound	142.9	145.2	123.7	134.7
+Seattle-Puget_Sound,142.9	145.2	123.7	134.7
