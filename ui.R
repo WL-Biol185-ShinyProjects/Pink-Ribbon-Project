@@ -1,6 +1,5 @@
 library(shiny)
 
-
 fluidPage(
   
   # Application title
@@ -23,12 +22,27 @@ mainPanel(
 
     )
   )
-    
 )
 
 
 
+#UI for Map of Incidence by County
+fluidPage(
+  titlePanel("Breast Cancer Map by County"),
   
+  
+  #Map for incidence by county
+  fluidPage(
+    leafletOutput("mymap"),
+    p(),
+    actionButton("recalc", "New points")
+  )
+  
+)
+
+
+
+
 
 
    
