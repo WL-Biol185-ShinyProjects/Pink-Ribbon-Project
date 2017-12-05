@@ -3,11 +3,20 @@ library(tidyverse)
 library(ggplot2)
 library(leaflet)
 
+<<<<<<< HEAD
+=======
+read.csv("gathered_data_corrected")
+gathered_data <- gather(breastcancerates2, key = "Race", value = "Incidence", 2:4, na.rm= TRUE)
+breast_cancerrates2 <- read.csv("gathered_data_corrected", header= TRUE)
+read.table("Final Breast Cancer Table")
+View(final_breastcancer)
+>>>>>>> 2005394b19390f1944b0af9ab76c7311b93495e3
 
 # read_xlsx("death.xlsx")
 # gathered_death <- gather(death, key = "Race", value = "Deaths", 2:5, na.rm= TRUE)
 # 
 # 
+<<<<<<< HEAD
 # 
 # # Define server logic required to draw a histogram
 function(input, output) {
@@ -62,6 +71,43 @@ function(input, output) {
 #     
 #     })
 #   # }
+=======
+#   })  
+  
+
+
+#Server for map by county
+
+popupColumn <- final_breastcancer %>%
+paste(County, p(), `Average Annual Count`)
+function(input, output) {
+    
+    output$mymap <- renderLeaflet({
+      filteredMap <- final_breastcancer %>%
+        na.omit(final_breastcancer) %>%
+        filter(!is.na(longitude)) %>%
+        filter(!is.na(latitude)) %>%
+        filter(state == input$state) %>%
+        arrange(county)
+      leaflet(filteredMap) %>% 
+        setView(lng= -98, lat= 41, zoom= 4) %>%
+        addTiles() %>%
+        addMarkers(label = ~filteredMap$`Average Annual Count`, clusterOptions = markerClusterOptions(), popup = as.character(filteredMap$`Average Annual Count`))
+    })                                                                                                                                                                                                                        
+}
+
+  
+
+
+    
+
+
+  
+
+
+# death_rate_time <- read_excel("~/Pink-Ribbon-Project/death_rate_time.xlsx")
+# gathered_death <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
+>>>>>>> 2005394b19390f1944b0af9ab76c7311b93495e3
 # 
 # 
 # 

@@ -28,6 +28,25 @@ fluidPage(
 #UI for Map of Incidence by County
 
 
+<<<<<<< HEAD
+=======
+read.table("Final Breast Cancer Table")
+fluidPage(
+  titlePanel("Breast Cancer Map by County"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(inputId = 'state',
+                  label = 'Select a State',
+                  choices = sort(unique(final_breastcancer$state)),
+                  selected = 1)),
+#Map Output
+mainPanel(
+  leafletOutput(outputId = "mymap")
+        )
+      )
+    )
+  
+>>>>>>> 2005394b19390f1944b0af9ab76c7311b93495e3
 
   
   # Application title
