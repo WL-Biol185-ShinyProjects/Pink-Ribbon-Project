@@ -86,7 +86,8 @@ function(input, output) {
 # 
 
 death_rate_time <- read_excel("~/Pink-Ribbon-Project/death_rate_time.xlsx")
-gathered_death <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
+gathered_death <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.rm = TRUE
+                         )
 
 
 
@@ -130,5 +131,7 @@ output$IncidencePlot <- renderPlot(
 
 )
 }
+
+
 
 
