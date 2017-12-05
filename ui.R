@@ -143,7 +143,7 @@ fluidPage(
    # Sidebar with a slider input for number of bins
    sidebarLayout(
      sidebarPanel(
-       selectInput(inputId = 'Age',
+       selectInput(inputId = 'Age_of_diagnosis',
                    label = 'Select an Age Category',
                    choices = sort(unique(gathered_incidence$Age)),
                    selected = 1

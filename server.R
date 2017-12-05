@@ -90,7 +90,7 @@ gathered_death <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.r
 
 
 
-  output$DeathPlot <- renderPlot({
+  output$DeathPlot <- renderPlot(
 
 
     gathered_death %>%
@@ -101,10 +101,10 @@ gathered_death <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.r
       scale_y_continuous(limit= c(0, 400)) +
       geom_line(aes(group = 1)) +
       geom_point() +
-      theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
+      theme(axis.text.x = element_text(angle = 60, hjust = 1)) 
       
 
-  })
+  )
 
 
   ##### incidence over time
@@ -114,21 +114,21 @@ gathered_incidence <- gather(incidence_rate_time, key = "Age", value = "Rate", 2
 
 
 
-output$IncidencePlot <- renderPlot({
+output$IncidencePlot <- renderPlot(
 
 
   gathered_incidence %>%
-    filter(Age == input$Age) %>%
+    filter(Age == input$Age_of_diagnosis) %>%
     arrange(Rate) %>%
     mutate(Year = factor(Year, levels = Year, ordered = TRUE)) %>%
     ggplot(aes(Year, Rate)) +
     scale_y_continuous(limit= c(0, 400)) +
     geom_line(aes(group = 1)) +
     geom_point() +
-    theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
+    theme(axis.text.x = element_text(angle = 60, hjust = 1)) 
 
 
-})
+)
 }
 
 
