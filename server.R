@@ -29,21 +29,21 @@ View(final_breastcancer)
 
 #Server for map by county
 
-popupColumn <- final_breastcancer %>%
-paste(County, p(), `Average Annual Count`)
+# popupColumn <- final_breastcancer %>%
+# paste(County, p(), `Average Annual Count`)
 function(input, output) {
     
     output$mymap <- renderLeaflet({
-      filteredMap <- final_breastcancer %>%
-        na.omit(final_breastcancer) %>%
-        filter(!is.na(longitude)) %>%
-        filter(!is.na(latitude)) %>%
-        filter(state == input$state) %>%
-        arrange(county)
-      leaflet(filteredMap) %>% 
-        setView(lng= -98, lat= 41, zoom= 4) %>%
-        addTiles() %>%
-        addMarkers(label = ~filteredMap$`Average Annual Count`, clusterOptions = markerClusterOptions(), popup = as.character(filteredMap$`Average Annual Count`))
+      # filteredMap <- final_breastcancer %>%
+      #   na.omit(final_breastcancer) %>%
+      #   # filter(!is.na(longitude)) %>%
+      #   # filter(!is.na(latitude)) %>%
+      #   filter(state == input$state) %>%
+      #   arrange(county)
+      # leaflet(filteredMap) %>% 
+      #   setView(lng= -98, lat= 41, zoom= 4) %>%
+      #   addTiles() %>%
+      #   addMarkers(label = ~filteredMap$`Average Annual Count`, clusterOptions = markerClusterOptions(), popup = as.character(filteredMap$`Average Annual Count`))
     })                                                                                                                                                                                                                        
 }
 
