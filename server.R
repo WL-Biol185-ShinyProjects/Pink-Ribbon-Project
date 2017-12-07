@@ -70,9 +70,7 @@ function(input, output) {
 #         addMarkers(label = ~`Recent 5-Year Trend in Incidence Rates`, clusterOptions = markerClusterOptions())
 #     
 #     })
-#   # }
-=======
-#   })  
+
   
 
 
@@ -107,7 +105,7 @@ function(input, output) {
 
 # death_rate_time <- read_excel("~/Pink-Ribbon-Project/death_rate_time.xlsx")
 # gathered_death <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
->>>>>>> 2005394b19390f1944b0af9ab76c7311b93495e3
+
 # 
 # 
 # 
