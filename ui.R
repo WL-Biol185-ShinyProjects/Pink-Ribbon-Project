@@ -31,19 +31,20 @@ library(leaflet)
 read.table("Final Breast Cancer Table")
 fluidPage(
   titlePanel("Breast Cancer Map by County"),
-  sidebarLayout(
-    sidebarPanel(
-      selectInput(inputId = 'state',
-                  label = 'Select a State',
-                  choices = sort(unique(final_breastcancer$state)),
-                  selected = 1)),
+  # sidebarLayout(
+  #   sidebarPanel(
+  #     selectInput(inputId = 'state',
+  #                              label = 'Select a State',
+  #                              choices = sort(unique(final_breastcancer$state)),
+  #                              selected = 1)
+    
 #Map Output
 mainPanel(
   leafletOutput(outputId = "mymap")
         )
       )
-    )
-  
+    
+
 
 
 
