@@ -4,7 +4,7 @@ library(shinydashboard)
 library(readr)
 library(readxl)
 library(shinythemes)
-require(extrafont)
+library(extrafont)
 shiny::tags
 
 
