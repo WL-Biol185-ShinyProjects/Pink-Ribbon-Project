@@ -27,6 +27,7 @@ gathered_incidence_line <- gather(annual_incidence_1_, key = "Age", value = "Rat
 gathered_incidence_line <- read.table("Gathered Incidence 2")
 
 zip_code_states <- read.csv("zip_codes_states.csv")
+breastcancer_bycounty_edited2 <- read_xlsx("breastcancer_bycounty_edited2.xlsx")
   zip_code_states %>%
   left_join(breastcancer_bycounty_edited2, by = c("county" = "County"))
 final_breastcancer <- read.table("Final Breast Cancer2")

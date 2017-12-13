@@ -85,6 +85,7 @@ gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
  
  #data tidying, creating table to run in server for map by county
 zip_code_states <- read.csv("zip_codes_states.csv")
+breastcancer_bycounty_edited2 <- read_xlsx("breastcancer_bycounty_edited2.xlsx")
 zip_code_states %>%
 left_join(breastcancer_bycounty_edited2, by = c("county" = "County"))
 final_breastcancer <- read.table("Final Breast Cancer2")
