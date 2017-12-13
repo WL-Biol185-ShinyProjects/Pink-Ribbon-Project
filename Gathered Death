@@ -1,0 +1,121 @@
+"Year" "Age" "Rate"
+"1" 1975 "All Ages" 31.45
+"2" 1976 "All Ages" 31.8
+"3" 1977 "All Ages" 32.48
+"4" 1978 "All Ages" 31.73
+"5" 1979 "All Ages" 31.21
+"6" 1980 "All Ages" 31.68
+"7" 1981 "All Ages" 31.92
+"8" 1982 "All Ages" 32.19
+"9" 1983 "All Ages" 32.07
+"10" 1984 "All Ages" 32.9
+"11" 1985 "All Ages" 32.98
+"12" 1986 "All Ages" 32.87
+"13" 1987 "All Ages" 32.66
+"14" 1988 "All Ages" 33.2
+"15" 1989 "All Ages" 33.23
+"16" 1990 "All Ages" 33.14
+"17" 1991 "All Ages" 32.69
+"18" 1992 "All Ages" 31.64
+"19" 1993 "All Ages" 31.39
+"20" 1994 "All Ages" 30.92
+"21" 1995 "All Ages" 30.55
+"22" 1996 "All Ages" 29.49
+"23" 1997 "All Ages" 28.21
+"24" 1998 "All Ages" 27.54
+"25" 1999 "All Ages" 26.61
+"26" 2000 "All Ages" 26.64
+"27" 2001 "All Ages" 26.01
+"28" 2002 "All Ages" 25.62
+"29" 2003 "All Ages" 25.27
+"30" 2004 "All Ages" 24.49
+"31" 2005 "All Ages" 24.14
+"32" 2006 "All Ages" 23.56
+"33" 2007 "All Ages" 22.96
+"34" 2008 "All Ages" 22.55
+"35" 2009 "All Ages" 22.24
+"36" 2010 "All Ages" 21.92
+"37" 2011 "All Ages" 21.54
+"38" 2012 "All Ages" 21.26
+"39" 2013 "All Ages" 20.73
+"40" 2014 "All Ages" 20.55
+"41" 1975 "younger_than_50" 9.11
+"42" 1976 "younger_than_50" 8.74
+"43" 1977 "younger_than_50" 8.86
+"44" 1978 "younger_than_50" 8.69
+"45" 1979 "younger_than_50" 8.58
+"46" 1980 "younger_than_50" 8.57
+"47" 1981 "younger_than_50" 8.46
+"48" 1982 "younger_than_50" 8.42
+"49" 1983 "younger_than_50" 8.16
+"50" 1984 "younger_than_50" 8.58
+"51" 1985 "younger_than_50" 8.56
+"52" 1986 "younger_than_50" 8.64
+"53" 1987 "younger_than_50" 8.44
+"54" 1988 "younger_than_50" 8.39
+"55" 1989 "younger_than_50" 8.42
+"56" 1990 "younger_than_50" 8.32
+"57" 1991 "younger_than_50" 8.16
+"58" 1992 "younger_than_50" 7.77
+"59" 1993 "younger_than_50" 7.41
+"60" 1994 "younger_than_50" 7.37
+"61" 1995 "younger_than_50" 7.29
+"62" 1996 "younger_than_50" 6.95
+"63" 1997 "younger_than_50" 6.71
+"64" 1998 "younger_than_50" 6.34
+"65" 1999 "younger_than_50" 5.75
+"66" 2000 "younger_than_50" 5.89
+"67" 2001 "younger_than_50" 5.86
+"68" 2002 "younger_than_50" 5.63
+"69" 2003 "younger_than_50" 5.58
+"70" 2004 "younger_than_50" 5.21
+"71" 2005 "younger_than_50" 5.2
+"72" 2006 "younger_than_50" 5.05
+"73" 2007 "younger_than_50" 4.77
+"74" 2008 "younger_than_50" 4.74
+"75" 2009 "younger_than_50" 4.81
+"76" 2010 "younger_than_50" 4.53
+"77" 2011 "younger_than_50" 4.47
+"78" 2012 "younger_than_50" 4.58
+"79" 2013 "younger_than_50" 4.41
+"80" 2014 "younger_than_50" 4.36
+"81" 1975 "older_than_50+" 89.94
+"82" 1976 "older_than_50+" 92.21
+"83" 1977 "older_than_50+" 94.34
+"84" 1978 "older_than_50+" 92.08
+"85" 1979 "older_than_50+" 90.47
+"86" 1980 "older_than_50+" 92.22
+"87" 1981 "older_than_50+" 93.33
+"88" 1982 "older_than_50+" 94.43
+"89" 1983 "older_than_50+" 94.7
+"90" 1984 "older_than_50+" 96.57
+"91" 1985 "older_than_50+" 96.9
+"92" 1986 "older_than_50+" 96.32
+"93" 1987 "older_than_50+" 96.08
+"94" 1988 "older_than_50+" 98.18
+"95" 1989 "older_than_50+" 98.22
+"96" 1990 "older_than_50+" 98.14
+"97" 1991 "older_than_50+" 96.91
+"98" 1992 "older_than_50+" 94.15
+"99" 1993 "older_than_50+" 94.18
+"100" 1994 "older_than_50+" 92.58
+"101" 1995 "older_than_50+" 91.46
+"102" 1996 "older_than_50+" 88.53
+"103" 1997 "older_than_50+" 84.53
+"104" 1998 "older_than_50+" 83.05
+"105" 1999 "older_than_50+" 81.22
+"106" 2000 "older_than_50+" 80.99
+"107" 2001 "older_than_50+" 78.77
+"108" 2002 "older_than_50+" 77.97
+"109" 2003 "older_than_50+" 76.85
+"110" 2004 "older_than_50+" 74.99
+"111" 2005 "older_than_50+" 73.74
+"112" 2006 "older_than_50+" 72.01
+"113" 2007 "older_than_50+" 70.6
+"114" 2008 "older_than_50+" 69.2
+"115" 2009 "older_than_50+" 67.88
+"116" 2010 "older_than_50+" 67.47
+"117" 2011 "older_than_50+" 66.25
+"118" 2012 "older_than_50+" 64.94
+"119" 2013 "older_than_50+" 63.47
+"120" 2014 "older_than_50+" 62.94

@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&pageSEL=sect_04_table.09.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Browse the SEER Cancer Statistics Review 1975-2014</title>
+<link rel="stylesheet" href="./Line Graph Death Data_files/normalize.css">
+<link rel="stylesheet" href="./Line Graph Death Data_files/base.css">
+<!--[if lt IE 8]><link rel="stylesheet" href="/s/ie.css" /><![endif]-->
+<link rel="stylesheet" href="./Line Graph Death Data_files/jquery-ui-1.9.2.custom.min.css">
+<link rel="stylesheet" href="./Line Graph Death Data_files/font-awesome.min.css">
+<link rel="stylesheet" href="./Line Graph Death Data_files/print.css" media="print">
+
+<script async="" src="./Line Graph Death Data_files/analytics.js.download"></script><script src="./Line Graph Death Data_files/jquery-1.9.0.min.js.download"></script>
+<script type="text/javascript" src="./Line Graph Death Data_files/general.js.download"></script><link rel="stylesheet" href="./Line Graph Death Data_files/styles.css">
+<!--custom_head--><link href="./Line Graph Death Data_files/tables.css" rel="stylesheet" type="text/css"><script type="text/javascript" language="JavaScript" src="./Line Graph Death Data_files/CSRPages.js.download"></script><script>
+	$(document).ready(function() {
+		$(".noJScriptHide").removeClass("noJScriptHide");	
+		function getQueryVariable(variable)
+		{
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i=0;i<vars.length;i++) 
+			{
+			var pair = vars[i].split("=");
+			if(pair[0] == variable){return pair[1];}
+			}
+		return(false);
+		} 
+		//Set Initial select box values	
+		if(getQueryVariable("sectionSEL"))
+			$("#sectionSEL").val(getQueryVariable("sectionSEL")).attr('selected','selected');	
+		if(getQueryVariable("pageSEL"))
+			$("#pageSEL").val(getQueryVariable("pageSEL")).attr('selected','selected');	
+		//Click submit button function
+		$("#submitBTN").click(function() {
+		if($("#sectionSEL").val() != '' && $("#pageSEL").val() != '')
+			$("#PageSelection").submit();
+		else 
+			{
+			alert ("Please select a valid Section and a valid Table/Figure.");
+			return false;
+			}
+		});
+	//Change select box function
+	$("#sectionSEL").change(function() {
+		var section = $("#sectionSEL").val();
+		$("#pageSEL").empty();
+		//Create the page options as a string so that this functionality works in IE 7 and IE8
+		var pageOptions = "<option value=''>Select Table/Figure</option>\n";
+		if($("#sectionSEL").val() != '')
+			{
+			$.each( aCSRPages[$("#sectionSEL").val()], function( key, value) 
+				{
+				pageOptions += "<option value='" + value[0] + "'>" + value[1] + "</option>\n";
+				});
+			}
+		$("#pageSEL").html(pageOptions);
+		});
+	});
+</script>
+<style type="text/css">
+	.FormRow {margin-bottom:5px;}
+	.SelectLabel {font-weight:bold;float:left;width:15%;}
+	.noJScriptHide { display:none;} /*Style for hiding elements that should only be displayed when javascript is enabled, this must be disabled by jquery on the page when it loads*/
+</style><!--/custom_head--><script type="text/javascript" id="_fed_an_ua_tag" src="./Line Graph Death Data_files/Universal-Federated-Analytics-Min.js.download"></script></head>
+
+<body class="summaries summaries stats wide js" onload="IMS_Onload.run();" style="zoom: 1;">
+
+<!-- Blue Header -->
+        <!-- NCI, SEER, Search, Navigation -->
+        <div class="headerWrap">
+	<div class="header">
+        <div class="nciBanner">
+            <div class="wrapper cf">
+                <a id="skip" href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html#content">Skip to Main Content</a>
+            </div>
+        </div>
+        
+        <div class="banner" role="banner">
+            <div class="wrapper cf">
+                <a class="seerLogo" href="https://seer.cancer.gov/">
+    			<!--[if gt IE 8]><!-->
+                		<img alt="Surveillance, Epidemiology, and End Results Program" src="./Line Graph Death Data_files/seer.svg">
+                    <!--<![endif]-->
+                    <!--[if lte IE 8]>
+                    	<img class="ie-logo-desk" src="/i/seer-desktop.png" alt="Surveillance, Epidemiology, and End Results Program">
+                        <img class="ie-logo-tab" src="/i/seer-tablet.png" alt="Surveillance, Epidemiology, and End Results Program">
+                        <img class="ie-logo-mob" src="/i/seer-mobile.png" alt="Surveillance, Epidemiology, and End Results Program">
+                    <![endif]-->
+    			</a>
+                <h1>Surveillance, Epidemiology, and End Results Program</h1>
+                <div class="search" role="search">
+                    <form action="https://seer.cancer.gov/search" method="get" name="search" onsubmit="return searchCheck(this.q) &amp;&amp; NCIAnalytics.SiteSearch(this);">
+                        <label for="searchsite">Search SEER:</label>
+                        <input id="searchsite" type="text" size="15" name="q" placeholder="Search SEER">
+                        <input type="image" src="./Line Graph Death Data_files/search_btn.png" class="greenBtn" alt="Search">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav" role="navigation">
+            <div class="wrapper">
+                <ul class="cf">
+                    <li class="statistics">
+                        <a><strong class="label">Cancer Statistics</strong></a>
+                        <ul class="cf">
+                            <li class="flyout-alt summaries with-js">
+                                <a href="https://seer.cancer.gov/statistics/summaries.html"><span class="sub">Statistical Summaries</span></a>
+                                <div class="flyout-content cf">
+                                    <div class="col-one">
+                                    	<p class="title">Latest Statistics</p>
+                                        <ul class="subNav">
+                                        	<li><a href="https://seer.cancer.gov/statfacts/">Cancer Stat Facts</a>
+                                        	Statistical summaries of common cancer types.</li>
+                                        	<li><a href="https://seer.cancer.gov/csr/">Cancer Statistics Review</a>
+	                                        An annual compilation of the most recent cancer statistics.</li>
+                                            <li><a href="https://seer.cancer.gov/statistics/ctpr.html">Cancer Trends Progress Report</a>
+                                            A report summarizing the nation's progress in reducing the cancer burden.</li>
+                                            <li><a href="https://seer.cancer.gov/statistics/videos/">Did You Know? Video Series</a>
+                                            Videos that highlight key topics and trends in cancer statistics.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-two">
+                                    	<p class="title">Defining Cancer Statistics</p>
+                                        <ul class="subNav">
+                                            <li><a href="https://seer.cancer.gov/statistics/types/incidence.html">Incidence</a></li>
+                                            <li><a href="https://seer.cancer.gov/statistics/types/mortality.html">Mortality</a></li>
+                                            <li><a href="https://seer.cancer.gov/statistics/types/prevalence.html">Prevalence</a></li>
+                                            <li><a href="https://seer.cancer.gov/statistics/types/survival.html">Survival</a></li>
+                                            <li><a href="https://seer.cancer.gov/statistics/types/lifetimerisk.html">Lifetime Risk</a></li>
+                                            <li><a href="https://seer.cancer.gov/statistics/types/raceethnicity.html">Statistics by Race/Ethnicity</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flyout-alt interactive with-js">
+                                <a href="https://seer.cancer.gov/statistics/interactive.html"><span class="sub">Interactive Tools</span></a>
+                                <div class="flyout-content cf">
+                                    <div class="col-one"> 
+                                    	<p class="title">Fast Stats<br>
+                                        <span class="normal">Build tables and graphs of cancer statistics by:</span></p>
+                                        <ul class="subNav">
+                                            <li><a href="https://seer.cancer.gov/faststats/selections.php?series=cancer">Cancer Site</a></li>
+                                            <li><a href="https://seer.cancer.gov/faststats/selections.php?series=race">Race / Ethnicity</a></li>
+                                            <li><a href="https://seer.cancer.gov/faststats/selections.php?series=sex">Sex</a></li>
+                                            <li><a href="https://seer.cancer.gov/faststats/selections.php?series=race,sex">Race / Sex</a></li>
+                                            <li><a href="https://seer.cancer.gov/faststats/selections.php?series=age">Age at Diagnosis or Death</a></li>
+                                            <li><a href="https://seer.cancer.gov/faststats/selections.php?series=data">Data Type</a></li>
+                                      	</ul>
+									</div>
+									<div class="col-two">
+                                    	<p class="title">Other Tools</p>
+                                    	<ul class="subNav">
+											<li><a href="https://seer.cancer.gov/statistics/scp.html">State Cancer Profiles</a>
+	                                        Maps and graphs showing cancer trends at the national, state, and county level.</li>
+                                            <li><a href="https://seer.cancer.gov/canstat/">CanStat Animator</a>
+                                            Animated graphs showing cancer trends over time.</li>
+                                            <li><a href="https://gis.cancer.gov/portal/">Geographic Information Systems (GIS) Portal</a>
+                                            Interactive mapping of cancer related geo-spatial data.</li>
+                                        </ul>
+                                         <p><a class="navBtn" href="https://seer.cancer.gov/statistics/interactive.html"><span>More Interactive Tools</span></a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flyout-alt publications with-js">
+                                <a href="https://seer.cancer.gov/publications/"><span class="sub">Publications</span></a>
+                                <div class="flyout-content cf">
+                                    <div class="col-one">
+                                    	<p class="title">Statistical Reports</p>
+                                        <ul class="subNav">
+                                           	<li><a href="https://seer.cancer.gov/report_to_nation/">Annual Reports to the Nation</a></li>
+                                            <li><a href="https://seer.cancer.gov/publications/apicancer/">Cancer Patterns Among Asians and Pacific Islanders</a></li>
+                                            <li><a href="https://seer.cancer.gov/publications/uscs.html">United States Cancer Statistics</a></li>
+                                        </ul>                   	
+                                    </div>
+                                    <div class="col-two">
+                                    	<p class="title">Other Publications</p>
+                                    	<ul class="subNav">
+                                            <li><a href="https://seer.cancer.gov/pubsearch/">SEER Bibliography</a>
+                                            Searchable bibliography of articles produced by SEER registry and staff.</li>
+                                            <li><a href="https://seer.cancer.gov/publications/monographs.html">Monographs</a>
+                                            Topical statistical reports published through SEER.</li>
+                                            <li><a href="https://seer.cancer.gov/cgi-bin/pubs/order1.pl?MONO,CSR,ABOUT,CODING,BOOK,CONV,">Publication Order Form</a>
+                                            Order SEER publications available in hardcopy.</li>
+                                        </ul>        
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="topCap"></div>
+                        <div class="bottomCap"></div>
+                    </li>
+                    <li class="flyout-alt resources with-js">
+                        <a href="https://seer.cancer.gov/resources/">
+                            <div class="wrap">
+                                <strong class="label">For Researchers</strong><br>
+                                <span>Datasets and Software</span>
+                            </div>
+                        </a>
+                        <div class="flyout-content cf">
+                            <div class="col-one">
+                            	<p class="title">Datasets</p>
+                                <ul class="subNav">
+                                    <li><a href="https://seer.cancer.gov/data/">SEER Data</a></li>
+                                    <li><a href="https://seer.cancer.gov/stdpopulations/">Standard Population Data</a></li>
+                                    <li><a href="https://seer.cancer.gov/mortality/">U.S. Mortality Data</a></li>
+                                    <li><a href="https://seer.cancer.gov/popdata/">U.S. Population Data</a></li>
+                                    <li><a href="https://seer.cancer.gov/seerstat/variables/countyattribs/">County Attributes</a></li>                                                 
+                                </ul>
+								<p><a class="navBtn" href="https://seer.cancer.gov/resources/"><span>More Data &amp; Software</span></a></p>
+                            </div>
+                            <div class="col-two">
+                            	<p class="title">Statistical Software</p>
+                                <ul class="subNav">
+                                    <li><a href="https://seer.cancer.gov/seerstat/">SEER*Stat</a></li>
+                                    <li><a href="https://seer.cancer.gov/seerprep/">SEER*Prep</a></li>
+                                    <li><a href="https://seer.cancer.gov/hdcalc/">HD*Calc</a></li>
+                                    <li><a href="https://seer.cancer.gov/resources/related.html">Other Analytic Software</a></li>
+                                </ul>
+                                <p class="title">Documentation &amp; Recodes</p>
+                                <ul class="subNav">
+                                    <li><a href="https://seer.cancer.gov/behavrecode/">Behavior Recode for Analysis</a></li>
+                                    <li><a href="https://seer.cancer.gov/codrecode/">Cause of Death Recode</a></li>
+                                    <li><a href="https://seer.cancer.gov/analysis/incidence.html">Incidence Site Recode Variables</a></li>
+                                    <li><a href="https://seer.cancer.gov/analysis/">Other Documentation &amp; Recodes</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flyout-alt registrars with-js">
+                        <a href="https://seer.cancer.gov/registrars/">
+                            <div class="wrap">
+                                <strong class="label">For Cancer Registrars</strong><br>
+                                <span>Coding Rules, Training and Support</span>
+                            </div>
+                        </a>
+                        <div class="flyout-content cf">
+                            <div class="col-one">
+                            	<p class="title">Reporting Guidelines</p>
+                              	<ul class="subNav">
+                                    <li><a href="https://seer.cancer.gov/tools/codingmanuals/index.html">Coding and Staging Manuals</a></li>
+                                    <li><a href="https://seer.cancer.gov/tools/heme/">Hematopoietic Project</a></li>
+                                    <li><a href="https://seer.cancer.gov/icd-o-3/">ICD-O-3 Coding Materials</a></li>
+                                    <li><a href="https://seer.cancer.gov/tools/mphrules/">Multiple Primary &amp; Histology Rules</a></li>
+                                </ul>
+                                <p class="title">Tools &amp; Services</p>
+                                <ul class="subNav">
+                                    <li><a href="https://seer.cancer.gov/tools/staging/rsa.html">Registrar Staging Assistant (SEER*RSA)</a></li>
+                                    <li><a href="https://seer.cancer.gov/tools/seerrx/">SEER*RX - Interactive Drug Database</a></li>
+                                    <li><a href="https://seer.cancer.gov/seerabs/">SEER Abstracting Tool (SEER*Abs)</a></li>
+                               </ul>
+                               <p><a class="navBtn" href="https://seer.cancer.gov/registrars/"><span>More Registrar Resources</span></a></p>
+                            </div>
+                            <div class="col-two">
+                            	<p class="title">Questions &amp; Answers</p>
+                            	<ul class="subNav">
+                                    <li><a href="https://seer.cancer.gov/seerinquiry/">SEER Inquiry System</a>
+                                    Answers to coding and abstracting questions.</li>
+                                    <li><a href="https://seer.cancer.gov/registrars/contact.html">Ask a SEER Registrar</a>
+                                    Submit a question about SEER registrar materials.</li>
+                                    <li><a href="https://seer.cancer.gov/training/">Cancer Registrar Training</a>
+                                    Resources within and beyond SEER</li>
+								</ul>                      
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flyout-alt about with-js">
+                        <a href="https://seer.cancer.gov/about/">
+                            <div class="wrap">
+                                <strong class="label">About SEER</strong><br>
+                                <span>Our Registries and Research</span>
+                            </div>
+                        </a>
+                        <div class="flyout-content cf">
+                            <div class="col-one">
+                                <p class="title">Overview</p>
+                                <p>SEER is an authoritative source of information on cancer incidence and survival in the United States. SEER currently collects and publishes cancer incidence and survival data from population-based cancer registries covering approximately 28 percent of the U.S. population.</p>
+                                <p><a class="navBtn" href="https://seer.cancer.gov/about/overview.html"><span>Read Full Overview</span></a></p>
+                            </div>
+                            <div class="col-two">
+                                <ul class="subNav">
+                                    <li><a href="https://seer.cancer.gov/registries/">SEER Registries</a></li>
+                                    <li><a href="https://seer.cancer.gov/about/activities.html">Research Activities</a></li>
+                                    <li><a href="https://seer.cancer.gov/qi/">Quality Improvement</a></li>
+                                    <li><a href="https://seer.cancer.gov/about/news/">In the News</a></li>
+                                    <li><a href="https://seer.cancer.gov/about/factsheets/">Fact Sheets &amp; Brochures</a></li>
+                                    <li><a href="https://seer.cancer.gov/about/contact.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>        <!-- Crumbs -->
+        <div class="wrapper">  
+            <div class="crumbs"><a class="home" href="https://seer.cancer.gov/"><img src="./Line Graph Death Data_files/icn_home.png" alt="Return Home"> Home</a>  <img class="arrow" src="./Line Graph Death Data_files/crumb_arrow.png" alt=""> <a href="https://seer.cancer.gov/statistics/summaries.html">Statistical Summaries</a> <img class="arrow" src="./Line Graph Death Data_files/crumb_arrow.png" alt=""> <a href="https://seer.cancer.gov/csr/1975_2014/">Cancer Statistics Review, 1975-2014</a> <img class="arrow" src="./Line Graph Death Data_files/crumb_arrow.png" alt=""> Browse the Tables and Figures</div>        </div> 
+    </div>
+</div>
+
+<!-- White Section -->
+<div class="section">
+    <div class="wrapper cf">
+    	<!-- Smaller, Aside Column -->
+        <div class="aside">
+            <div class="leftNav" role="navigation" aria-label="Statistical Summaries">
+	<ul>
+		<li class="expand" style="list-style: none none;"><a href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html#" class="blockTog" aria-controls="navTog1" role="button" title="Expand the following section"></a><a href="https://seer.cancer.gov/statfacts/" id="navTog1-label">Cancer Stat Facts</a>
+        	<ul aria-expanded="false" tabindex="-1" role="region" id="navTog1" aria-labelledby="navTog1-label" style="display: none;">
+            	<li><a href="https://seer.cancer.gov/statfacts/html/urinb.html">Bladder</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/breast.html">Breast (Female)</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/colorect.html">Colon and Rectum</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/corp.html">Endometrial Cancer</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/kidrp.html">Kidney and Renal Pelvis</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/leuks.html">Leukemia</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/lungb.html">Lung and Bronchus</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/melan.html">Melanoma of the Skin</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/nhl.html">Non-Hodgkin Lymphoma</a> </li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/pancreas.html">Pancreas</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/prost.html">Prostate</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/html/thyro.html">Thyroid</a></li>
+                <li><a href="https://seer.cancer.gov/statfacts/more.html">More Cancer Types</a></li>
+            </ul>
+        </li>
+		<li class="expand" style="list-style: none none;"><a href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html#" class="blockTog close" aria-controls="navTog2" role="button" title="Collapse the following section"></a><a href="https://seer.cancer.gov/csr/1975_2014/" id="navTog2-label">Cancer Statistics Review, 1975-2014</a>
+			<ul aria-expanded="true" tabindex="-1" role="region" id="navTog2" aria-labelledby="navTog2-label" style="display: block;">
+				<li><a class="active" href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php">Browse the Tables and Figures</a></li>
+				<li><a href="https://seer.cancer.gov/csr/1975_2014/sections.html">Access CSR Contents in PDF</a></li>
+				<li><a href="https://seer.cancer.gov/cgi-bin/csr/1975_2014/search.pl">Generate Custom Reports</a></li>
+				<li><a href="https://seer.cancer.gov/csr/1975_2014/results_figure/sect_01_intro1_6pgs.pdf" target="_blank">About the Report (PDF)</a></li>
+				<li><a href="https://seer.cancer.gov/csr/1975_2014/results_figure/sect_01_intro2_25pgs.pdf" target="_blank">Technical Notes (PDF)</a></li>
+				<li><a href="https://seer.cancer.gov/csr/1975_2014/revisions.html">Revision History</a></li>
+				<li><a href="https://seer.cancer.gov/csr/previous.html">Archive</a></li>
+			</ul>
+		</li>
+        <li><a href="https://seer.cancer.gov/statistics/ctpr.html">Cancer Trends Progress Report</a></li>
+        <li><a href="https://seer.cancer.gov/statistics/videos/">Did You Know? Video Series</a></li>
+	</ul>
+	<h4>Resources</h4>
+	<ul>
+		<li class="expand" style="list-style: none none;"><a href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html#" class="blockTog" aria-controls="navTog3" role="button" title="Expand the following section"></a><a href="https://seer.cancer.gov/statistics/types.html" id="navTog3-label">Defining Cancer Statistics</a>
+			<ul aria-expanded="false" tabindex="-1" role="region" id="navTog3" aria-labelledby="navTog3-label" style="display: none;">
+				<li><a href="https://seer.cancer.gov/statistics/types/incidence.html">Incidence</a></li>
+				<li><a href="https://seer.cancer.gov/statistics/types/mortality.html">Mortality</a></li>
+				<li><a href="https://seer.cancer.gov/statistics/types/prevalence.html">Prevalence</a></li>
+				<li><a href="https://seer.cancer.gov/statistics/types/survival.html">Survival</a></li>
+				<li><a href="https://seer.cancer.gov/statistics/types/lifetimerisk.html">Lifetime Risk</a></li>
+				<li><a href="https://seer.cancer.gov/statistics/types/raceethnicity.html">Statistics by Race/Ethnicity</a></li>
+			</ul>
+		</li>
+		<li><a id="glossary" href="https://seer.cancer.gov/cgi-bin/glossary/glossary.pl" target="_blank" title="Glossary opens in a new window" onclick="return openWinCustom(this.href,&#39;glossary&#39;);">Glossary of Statistical Terms</a></li>
+		<li><a href="https://seer.cancer.gov/statistics/software.html">Software Used to Generate Statistics</a></li>
+		<li><a href="https://seer.cancer.gov/statistics/other.html">Other Statistical Resources</a></li>
+	</ul>
+</div>            <div class="utilities" role="note">
+	<h4>Tools</h4>
+    <ul id="utilities">
+        <li><a id="email" href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html#" class="modal-emailTrigger" title="Email This Page" onclick="return false;">Email</a></li>
+        <li><a id="print" href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html#">Print Page</a></li>
+    </ul>
+</div>
+
+        </div>
+        <!-- Main Content Column -->	
+        <div class="main" id="content" role="main">
+            <h2><!--body_title-->Browse the SEER Cancer Statistics Review 1975-2014<!--/body_title--></h2>
+            <!--body_content--><p>The navigation below allows you to jump to any table or figure within the SEER Cancer Statistics Review. </p>
+		<ol><li>First select the CSR Section, then a Table/Figure from that section.</li>
+		    <li>Use the Submit button to view the table or figure.  You will have options to download a printer-friendly version (PDF) or the data table (CSV) as well.</li></ol>
+   <p>To learn more about the Cancer Statistics Review and the statistics presented in this report, refer to the <a href="https://seer.cancer.gov/csr/1975_2014/results_figure/sect_01_intro1_6pgs.pdf" target="_blank">About the CSR (PDF)</a> and <a href="https://seer.cancer.gov/csr/1975_2014/results_figure/sect_01_intro2_25pgs.pdf" target="_blank">Technical Notes (PDF)</a> pages.</p><br>
+<form id="PageSelection" name="PageSelection" method="Get" action="https://seer.cancer.gov/csr/1975_2014/browse_csr.php">
+  <div id="FormControls" style="width:100%;border:0">
+    <div id="SectionRow" class="FormRow "><span class="SelectLabel"><label for="sectionSEL">Section:</label></span>      <select id="sectionSEL" name="sectionSEL" selected="selected">
+        <option value="">Select Section.</option>
+        <option value="1">Overview</option>
+        <option value="2">All Cancer Sites</option>
+        <option value="3">- Brain and Other Nervous System</option>
+        <option value="4" selected="selected">- Breast</option>
+        <option value="5">- Cervix Uteri</option>
+        <option value="6">- Colon and Rectum</option>
+        <option value="7">- Corpus Uteri</option>
+        <option value="8">- Esophagus</option>
+        <option value="9">- Hodgkin Lymphoma</option>
+        <option value="10">- Kaposi Sarcoma</option>
+        <option value="11">- Kidney and Renal Pelvis</option>
+        <option value="12">- Larynx</option>
+        <option value="13">- Leukemia</option>
+        <option value="14">- Liver and Intrahepatic Bile Duct</option>
+        <option value="15">- Lung and Bronchus</option>
+        <option value="16">- Melanoma of the Skin</option>
+        <option value="17">- Mesothelioma</option>
+        <option value="18">- Myeloma</option>
+        <option value="19">- Non-Hodgkin Lymphoma</option>
+        <option value="20">- Oral Cavity and Pharynx</option>
+        <option value="21">- Ovary</option>
+        <option value="22">- Pancreas</option>
+        <option value="23">- Prostate</option>
+        <option value="24">- Stomach</option>
+        <option value="25">- Testis</option>
+        <option value="26">- Thyroid</option>
+        <option value="27">- Urinary Bladder</option>
+        <option value="28">Childhood Cancer</option>
+        <option value="29">Childhood Cancer by the ICCC</option>
+        <option value="30">Myelodysplastic Syndromes</option>
+        <option value="31">Benign Brain Tumors</option>
+        <option value="32">Adolescent and Young Adult Cancer</option>
+        <option value="33">Cause Specific Survival</option>
+        <option value="34">Soft Tissue Sarcoma</option>
+        <option value="35">Prevalence Method Comparison</option>
+        <option value="36">Appendix</option>
+      </select>
+       <noscript>&lt;input type='submit' alt='Select Chapter' name='chapSubmit' value='Go' /&gt;</noscript>
+    </div>
+    <div id="TableSelect" class="FormRow "><span class="SelectLabel"><label for="pageSEL">Table/Figure:</label></span>      <select id="pageSEL" name="pageSEL" selected="selected">
+        <option value="">Select Table/Figure.</option>
+        <option value="sect_04_table.01.html">Table 4.1: Trends in SEER Incidence and US Mortality, Females, All Ages</option>
+        <option value="sect_04_table.02.html">Table 4.2: Trends in SEER Incidence and US Mortality, Females, Ages &lt;50</option>
+        <option value="sect_04_table.03.html">Table 4.3: Trends in SEER Incidence and US Mortality, Females, Ages 50+</option>
+        <option value="sect_04_table.04.html">Table 4.4: Trends in SEER Incidence, Females (In Situ Cases)</option>
+        <option value="sect_04_table.05.html">Table 4.5: Annual Incidence Rates by Sex</option>
+        <option value="sect_04_table.06.html">Table 4.6: Annual Death Rates by Sex</option>
+        <option value="sect_04_table.07.html">Table 4.7: Annual Delay-adjusted Incidence Rates</option>
+        <option value="sect_04_table.08.html">Table 4.8: Annual Incidence Rates</option>
+        <option value="sect_04_table.09.html" selected="selected">Table 4.9: Annual Death Rates</option>
+        <option value="sect_04_table.10.html">Table 4.10: Annual Incidence Rates (In Situ Cases)</option>
+        <option value="sect_04_table.11.html">Table 4.11: Incidence and Mortality Rates by Age</option>
+        <option value="sect_04_table.12.html">Table 4.12: Incidence Rates by Age (In Situ Cases)</option>
+        <option value="sect_04_table.13.html">Table 4.13: 5-year Relative and Period Survival</option>
+        <option value="sect_04_table.14.html">Table 4.14: Relative Survival by Year of Diagnosis, All Ages</option>
+        <option value="sect_04_table.15.html">Table 4.15: Relative Survival by Year of Diagnosis, Ages &lt;50</option>
+        <option value="sect_04_table.16.html">Table 4.16: Relative Survival by Year of Diagnosis, Ages 50+</option>
+        <option value="sect_04_table.17.html">Table 4.17: Risk of Developing/Dying</option>
+        <option value="sect_04_table.18.html">Table 4.18: Rates and Trends by Race/Ethnicity</option>
+        <option value="sect_04_table.19.html">Table 4.19: Rates and Trends by Race/Ethnicity (In Situ Cases)</option>
+        <option value="sect_04_table.20.html">Table 4.20: Age-Adjusted SEER Incidence Rates by Registry</option>
+        <option value="sect_04_table.21.html">Table 4.21: Age-Adjusted SEER Death Rates by Registry</option>
+        <option value="sect_04_table.22.html">Table 4.22: Age-Adjusted SEER Incidence Rates by Registry</option>
+        <option value="sect_04_table.23.html">Table 4.23: Age-Adjusted Cancer Death Rates By State, Females</option>
+        <option value="sect_04_table.24.html">Table 4.24: U.S. Prevalence Estimates</option>
+        <option value="sect_04_table.25.html">Table 4.25: Case Distribution by Histology</option>
+        <option value="sect_04_table.26.html">Table 4.26: Case Distribution by Histology (In Situ Cases)</option>
+        <option value="sect_04_zfig.01.html">Figure 4.1: SEER Incidence, Delay Adjusted Incidence and US Death Rates by Race</option>
+        <option value="sect_04_zfig.02.html">Figure 4.2: SEER Incidence, Delay Adjusted Incidence and US Death Rates by Age and Race</option>
+        <option value="sect_04_zfig.03.html">Figure 4.3: SEER Incidence and Delay Adjusted Incidence by Race (In Situ cases)</option>
+        <option value="sect_04_zfig.04.html">Figure 4.4: SEER Incidence and US Death Rates by Race/Ethnicity</option>
+        <option value="sect_04_zfig.05.html">Figure 4.5: SEER Incidence Rates, In Situ vs Malignant, All Races</option>
+        <option value="sect_04_zfig.06.html">Figure 4.6: SEER Incidence Rates, In Situ vs Malignant, White</option>
+        <option value="sect_04_zfig.07.html">Figure 4.7: SEER Incidence Rates, In Situ vs Malignant, Black</option>
+        <option value="sect_04_zfig.08.html">Figure 4.8: SEER Delay Adjusted Incidence and US Mortality, White vs Black</option>
+        <option value="sect_04_zfig.09.html">Figure 4.9: US Mortality Comparison, White vs Black Females (Breast, Lung and Bronchus)</option>
+        <option value="sect_04_zfig.10.html">Figure 4.10: SEER Delay Adjusted Incidence Rates for SEER 9 and SEER 13 Areas, Females</option>
+        <option value="sect_04_zfig.11.html">Figure 4.11: 5-Year SEER Conditional Relative Survival</option>
+      </select>
+    </div>
+    <div id="SubmitRow" class="FormRow ">
+      <input id="submitBTN" type="submit" alt="Submit" value="Submit">
+    </div>
+  </div>
+</form>
+<hr>
+<p style="font-weight:bold;"> Download and Print:
+<span style="margin-left:20px;"><a href="https://seer.cancer.gov/csr/1975_2014/results_single/sect_04_table.09.pdf" target="_blank">Download Printer-friendly PDF</a></span>
+<span style="margin-left:20px;"><a href="https://seer.cancer.gov/csr/1975_2014/download_csr_datafile.php/sect_04_table.09.csv">Download data</a></span>
+</p>
+<hr>
+ <h3>Table 4.9</h3>
+ <h3>Cancer of the Female Breast (Invasive)</h3>
+<table class="dataTable" cellpadding="0" cellspacing="0">
+ <caption>Age-adjusted U.S. Death<sup><a href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html#a">a</a></sup> Rates by Year, Race and Age</caption>
+<colgroup><col>
+<col>
+<col>
+<col>
+<col class="divider">
+<col>
+<col>
+<col class="divider">
+<col>
+<col>
+</colgroup><tbody><tr>
+	<th id="h_c_0_1" colspan="1" rowspan="2">Year of Death</th>
+	<th id="h_c_0_2" colspan="3" rowspan="1">All Races, Females</th>
+	<th id="h_c_0_5" colspan="3" rowspan="1">White Females</th>
+	<th id="h_c_0_8" colspan="3" rowspan="1">Black Females</th>
+
+</tr>
+
+<tr>
+	<th id="h_c_1_2" headers="h_c_0_2 " class="subhead" colspan="1">All Ages</th>
+	<th id="h_c_1_3" headers="h_c_0_2 " class="subhead" colspan="1">Ages &lt;50</th>
+	<th id="h_c_1_4" headers="h_c_0_2 " class="subhead" colspan="1">Ages 50+</th>
+	<th id="h_c_1_5" headers="h_c_0_5 " class="subhead" colspan="1">All Ages</th>
+	<th id="h_c_1_6" headers="h_c_0_5 " class="subhead" colspan="1">Ages &lt;50</th>
+	<th id="h_c_1_7" headers="h_c_0_5 " class="subhead" colspan="1">Ages 50+</th>
+	<th id="h_c_1_8" headers="h_c_0_8 " class="subhead" colspan="1">All Ages</th>
+	<th id="h_c_1_9" headers="h_c_0_8 " class="subhead" colspan="1">Ages &lt;50</th>
+	<th id="h_c_1_10" headers="h_c_0_8 " class="subhead" colspan="1">Ages 50+</th>
+
+</tr>
+
+<tr>
+	<th id="h_r_0_0" headers="h_c_0_1 " class="">1975-2014</th>
+	<td headers="h_r_0_0 h_c_0_2 h_c_1_2 ">27.66</td>
+	<td headers="h_r_0_0 h_c_0_2 h_c_1_3 ">6.58</td>
+	<td headers="h_r_0_0 h_c_0_2 h_c_1_4 ">82.85</td>
+	<td headers="h_r_0_0 h_c_0_5 h_c_1_5 ">27.48</td>
+	<td headers="h_r_0_0 h_c_0_5 h_c_1_6 ">6.23</td>
+	<td headers="h_r_0_0 h_c_0_5 h_c_1_7 ">83.15</td>
+	<td headers="h_r_0_0 h_c_0_8 h_c_1_8 ">33.36</td>
+	<td headers="h_r_0_0 h_c_0_8 h_c_1_9 ">10.16</td>
+	<td headers="h_r_0_0 h_c_0_8 h_c_1_10 ">94.11</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_1_0" headers="h_c_0_1 " class="">1975</th>
+	<td headers="h_r_1_0 h_c_0_2 h_c_1_2 ">31.45</td>
+	<td headers="h_r_1_0 h_c_0_2 h_c_1_3 ">9.11</td>
+	<td headers="h_r_1_0 h_c_0_2 h_c_1_4 ">89.94</td>
+	<td headers="h_r_1_0 h_c_0_5 h_c_1_5 ">31.79</td>
+	<td headers="h_r_1_0 h_c_0_5 h_c_1_6 ">9.01</td>
+	<td headers="h_r_1_0 h_c_0_5 h_c_1_7 ">91.42</td>
+	<td headers="h_r_1_0 h_c_0_8 h_c_1_8 ">29.49</td>
+	<td headers="h_r_1_0 h_c_0_8 h_c_1_9 ">10.68</td>
+	<td headers="h_r_1_0 h_c_0_8 h_c_1_10 ">78.75</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_2_0" headers="h_c_0_1 " class="">1976</th>
+	<td headers="h_r_2_0 h_c_0_2 h_c_1_2 ">31.80</td>
+	<td headers="h_r_2_0 h_c_0_2 h_c_1_3 ">8.74</td>
+	<td headers="h_r_2_0 h_c_0_2 h_c_1_4 ">92.21</td>
+	<td headers="h_r_2_0 h_c_0_5 h_c_1_5 ">32.17</td>
+	<td headers="h_r_2_0 h_c_0_5 h_c_1_6 ">8.64</td>
+	<td headers="h_r_2_0 h_c_0_5 h_c_1_7 ">93.80</td>
+	<td headers="h_r_2_0 h_c_0_8 h_c_1_8 ">30.47</td>
+	<td headers="h_r_2_0 h_c_0_8 h_c_1_9 ">10.22</td>
+	<td headers="h_r_2_0 h_c_0_8 h_c_1_10 ">83.50</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_3_0" headers="h_c_0_1 " class="">1977</th>
+	<td headers="h_r_3_0 h_c_0_2 h_c_1_2 ">32.48</td>
+	<td headers="h_r_3_0 h_c_0_2 h_c_1_3 ">8.86</td>
+	<td headers="h_r_3_0 h_c_0_2 h_c_1_4 ">94.34</td>
+	<td headers="h_r_3_0 h_c_0_5 h_c_1_5 ">32.67</td>
+	<td headers="h_r_3_0 h_c_0_5 h_c_1_6 ">8.75</td>
+	<td headers="h_r_3_0 h_c_0_5 h_c_1_7 ">95.32</td>
+	<td headers="h_r_3_0 h_c_0_8 h_c_1_8 ">32.80</td>
+	<td headers="h_r_3_0 h_c_0_8 h_c_1_9 ">10.52</td>
+	<td headers="h_r_3_0 h_c_0_8 h_c_1_10 ">91.13</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_4_0" headers="h_c_0_1 " class="">1978</th>
+	<td headers="h_r_4_0 h_c_0_2 h_c_1_2 ">31.73</td>
+	<td headers="h_r_4_0 h_c_0_2 h_c_1_3 ">8.69</td>
+	<td headers="h_r_4_0 h_c_0_2 h_c_1_4 ">92.08</td>
+	<td headers="h_r_4_0 h_c_0_5 h_c_1_5 ">31.90</td>
+	<td headers="h_r_4_0 h_c_0_5 h_c_1_6 ">8.46</td>
+	<td headers="h_r_4_0 h_c_0_5 h_c_1_7 ">93.29</td>
+	<td headers="h_r_4_0 h_c_0_8 h_c_1_8 ">32.14</td>
+	<td headers="h_r_4_0 h_c_0_8 h_c_1_9 ">11.37</td>
+	<td headers="h_r_4_0 h_c_0_8 h_c_1_10 ">86.53</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_5_0" headers="h_c_0_1 " class="">1979</th>
+	<td headers="h_r_5_0 h_c_0_2 h_c_1_2 ">31.21</td>
+	<td headers="h_r_5_0 h_c_0_2 h_c_1_3 ">8.58</td>
+	<td headers="h_r_5_0 h_c_0_2 h_c_1_4 ">90.47</td>
+	<td headers="h_r_5_0 h_c_0_5 h_c_1_5 ">31.48</td>
+	<td headers="h_r_5_0 h_c_0_5 h_c_1_6 ">8.34</td>
+	<td headers="h_r_5_0 h_c_0_5 h_c_1_7 ">92.07</td>
+	<td headers="h_r_5_0 h_c_0_8 h_c_1_8 ">30.82</td>
+	<td headers="h_r_5_0 h_c_0_8 h_c_1_9 ">11.36</td>
+	<td headers="h_r_5_0 h_c_0_8 h_c_1_10 ">81.78</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_6_0" headers="h_c_0_1 " class="">1980</th>
+	<td headers="h_r_6_0 h_c_0_2 h_c_1_2 ">31.68</td>
+	<td headers="h_r_6_0 h_c_0_2 h_c_1_3 ">8.57</td>
+	<td headers="h_r_6_0 h_c_0_2 h_c_1_4 ">92.22</td>
+	<td headers="h_r_6_0 h_c_0_5 h_c_1_5 ">31.93</td>
+	<td headers="h_r_6_0 h_c_0_5 h_c_1_6 ">8.39</td>
+	<td headers="h_r_6_0 h_c_0_5 h_c_1_7 ">93.56</td>
+	<td headers="h_r_6_0 h_c_0_8 h_c_1_8 ">31.68</td>
+	<td headers="h_r_6_0 h_c_0_8 h_c_1_9 ">10.82</td>
+	<td headers="h_r_6_0 h_c_0_8 h_c_1_10 ">86.31</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_7_0" headers="h_c_0_1 " class="">1981</th>
+	<td headers="h_r_7_0 h_c_0_2 h_c_1_2 ">31.92</td>
+	<td headers="h_r_7_0 h_c_0_2 h_c_1_3 ">8.46</td>
+	<td headers="h_r_7_0 h_c_0_2 h_c_1_4 ">93.33</td>
+	<td headers="h_r_7_0 h_c_0_5 h_c_1_5 ">32.12</td>
+	<td headers="h_r_7_0 h_c_0_5 h_c_1_6 ">8.20</td>
+	<td headers="h_r_7_0 h_c_0_5 h_c_1_7 ">94.77</td>
+	<td headers="h_r_7_0 h_c_0_8 h_c_1_8 ">32.55</td>
+	<td headers="h_r_7_0 h_c_0_8 h_c_1_9 ">11.48</td>
+	<td headers="h_r_7_0 h_c_0_8 h_c_1_10 ">87.74</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_8_0" headers="h_c_0_1 " class="">1982</th>
+	<td headers="h_r_8_0 h_c_0_2 h_c_1_2 ">32.19</td>
+	<td headers="h_r_8_0 h_c_0_2 h_c_1_3 ">8.42</td>
+	<td headers="h_r_8_0 h_c_0_2 h_c_1_4 ">94.43</td>
+	<td headers="h_r_8_0 h_c_0_5 h_c_1_5 ">32.31</td>
+	<td headers="h_r_8_0 h_c_0_5 h_c_1_6 ">8.19</td>
+	<td headers="h_r_8_0 h_c_0_5 h_c_1_7 ">95.46</td>
+	<td headers="h_r_8_0 h_c_0_8 h_c_1_8 ">33.75</td>
+	<td headers="h_r_8_0 h_c_0_8 h_c_1_9 ">11.19</td>
+	<td headers="h_r_8_0 h_c_0_8 h_c_1_10 ">92.83</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_9_0" headers="h_c_0_1 " class="">1983</th>
+	<td headers="h_r_9_0 h_c_0_2 h_c_1_2 ">32.07</td>
+	<td headers="h_r_9_0 h_c_0_2 h_c_1_3 ">8.16</td>
+	<td headers="h_r_9_0 h_c_0_2 h_c_1_4 ">94.70</td>
+	<td headers="h_r_9_0 h_c_0_5 h_c_1_5 ">32.20</td>
+	<td headers="h_r_9_0 h_c_0_5 h_c_1_6 ">7.89</td>
+	<td headers="h_r_9_0 h_c_0_5 h_c_1_7 ">95.85</td>
+	<td headers="h_r_9_0 h_c_0_8 h_c_1_8 ">33.53</td>
+	<td headers="h_r_9_0 h_c_0_8 h_c_1_9 ">11.17</td>
+	<td headers="h_r_9_0 h_c_0_8 h_c_1_10 ">92.10</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_10_0" headers="h_c_0_1 " class="">1984</th>
+	<td headers="h_r_10_0 h_c_0_2 h_c_1_2 ">32.90</td>
+	<td headers="h_r_10_0 h_c_0_2 h_c_1_3 ">8.58</td>
+	<td headers="h_r_10_0 h_c_0_2 h_c_1_4 ">96.57</td>
+	<td headers="h_r_10_0 h_c_0_5 h_c_1_5 ">32.90</td>
+	<td headers="h_r_10_0 h_c_0_5 h_c_1_6 ">8.22</td>
+	<td headers="h_r_10_0 h_c_0_5 h_c_1_7 ">97.55</td>
+	<td headers="h_r_10_0 h_c_0_8 h_c_1_8 ">35.94</td>
+	<td headers="h_r_10_0 h_c_0_8 h_c_1_9 ">12.55</td>
+	<td headers="h_r_10_0 h_c_0_8 h_c_1_10 ">97.21</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_11_0" headers="h_c_0_1 " class="">1985</th>
+	<td headers="h_r_11_0 h_c_0_2 h_c_1_2 ">32.98</td>
+	<td headers="h_r_11_0 h_c_0_2 h_c_1_3 ">8.56</td>
+	<td headers="h_r_11_0 h_c_0_2 h_c_1_4 ">96.90</td>
+	<td headers="h_r_11_0 h_c_0_5 h_c_1_5 ">33.11</td>
+	<td headers="h_r_11_0 h_c_0_5 h_c_1_6 ">8.30</td>
+	<td headers="h_r_11_0 h_c_0_5 h_c_1_7 ">98.09</td>
+	<td headers="h_r_11_0 h_c_0_8 h_c_1_8 ">34.85</td>
+	<td headers="h_r_11_0 h_c_0_8 h_c_1_9 ">12.04</td>
+	<td headers="h_r_11_0 h_c_0_8 h_c_1_10 ">94.58</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_12_0" headers="h_c_0_1 " class="">1986</th>
+	<td headers="h_r_12_0 h_c_0_2 h_c_1_2 ">32.87</td>
+	<td headers="h_r_12_0 h_c_0_2 h_c_1_3 ">8.64</td>
+	<td headers="h_r_12_0 h_c_0_2 h_c_1_4 ">96.32</td>
+	<td headers="h_r_12_0 h_c_0_5 h_c_1_5 ">32.93</td>
+	<td headers="h_r_12_0 h_c_0_5 h_c_1_6 ">8.26</td>
+	<td headers="h_r_12_0 h_c_0_5 h_c_1_7 ">97.53</td>
+	<td headers="h_r_12_0 h_c_0_8 h_c_1_8 ">35.44</td>
+	<td headers="h_r_12_0 h_c_0_8 h_c_1_9 ">12.86</td>
+	<td headers="h_r_12_0 h_c_0_8 h_c_1_10 ">94.58</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_13_0" headers="h_c_0_1 " class="">1987</th>
+	<td headers="h_r_13_0 h_c_0_2 h_c_1_2 ">32.66</td>
+	<td headers="h_r_13_0 h_c_0_2 h_c_1_3 ">8.44</td>
+	<td headers="h_r_13_0 h_c_0_2 h_c_1_4 ">96.08</td>
+	<td headers="h_r_13_0 h_c_0_5 h_c_1_5 ">32.57</td>
+	<td headers="h_r_13_0 h_c_0_5 h_c_1_6 ">7.99</td>
+	<td headers="h_r_13_0 h_c_0_5 h_c_1_7 ">96.93</td>
+	<td headers="h_r_13_0 h_c_0_8 h_c_1_8 ">36.73</td>
+	<td headers="h_r_13_0 h_c_0_8 h_c_1_9 ">12.94</td>
+	<td headers="h_r_13_0 h_c_0_8 h_c_1_10 ">99.04</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_14_0" headers="h_c_0_1 " class="">1988</th>
+	<td headers="h_r_14_0 h_c_0_2 h_c_1_2 ">33.20</td>
+	<td headers="h_r_14_0 h_c_0_2 h_c_1_3 ">8.39</td>
+	<td headers="h_r_14_0 h_c_0_2 h_c_1_4 ">98.18</td>
+	<td headers="h_r_14_0 h_c_0_5 h_c_1_5 ">33.09</td>
+	<td headers="h_r_14_0 h_c_0_5 h_c_1_6 ">8.01</td>
+	<td headers="h_r_14_0 h_c_0_5 h_c_1_7 ">98.78</td>
+	<td headers="h_r_14_0 h_c_0_8 h_c_1_8 ">37.78</td>
+	<td headers="h_r_14_0 h_c_0_8 h_c_1_9 ">12.71</td>
+	<td headers="h_r_14_0 h_c_0_8 h_c_1_10 ">103.42</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_15_0" headers="h_c_0_1 " class="">1989</th>
+	<td headers="h_r_15_0 h_c_0_2 h_c_1_2 ">33.23</td>
+	<td headers="h_r_15_0 h_c_0_2 h_c_1_3 ">8.42</td>
+	<td headers="h_r_15_0 h_c_0_2 h_c_1_4 ">98.22</td>
+	<td headers="h_r_15_0 h_c_0_5 h_c_1_5 ">33.23</td>
+	<td headers="h_r_15_0 h_c_0_5 h_c_1_6 ">8.06</td>
+	<td headers="h_r_15_0 h_c_0_5 h_c_1_7 ">99.16</td>
+	<td headers="h_r_15_0 h_c_0_8 h_c_1_8 ">36.61</td>
+	<td headers="h_r_15_0 h_c_0_8 h_c_1_9 ">12.41</td>
+	<td headers="h_r_15_0 h_c_0_8 h_c_1_10 ">99.96</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_16_0" headers="h_c_0_1 " class="">1990</th>
+	<td headers="h_r_16_0 h_c_0_2 h_c_1_2 ">33.14</td>
+	<td headers="h_r_16_0 h_c_0_2 h_c_1_3 ">8.32</td>
+	<td headers="h_r_16_0 h_c_0_2 h_c_1_4 ">98.14</td>
+	<td headers="h_r_16_0 h_c_0_5 h_c_1_5 ">33.02</td>
+	<td headers="h_r_16_0 h_c_0_5 h_c_1_6 ">7.99</td>
+	<td headers="h_r_16_0 h_c_0_5 h_c_1_7 ">98.55</td>
+	<td headers="h_r_16_0 h_c_0_8 h_c_1_8 ">38.00</td>
+	<td headers="h_r_16_0 h_c_0_8 h_c_1_9 ">11.99</td>
+	<td headers="h_r_16_0 h_c_0_8 h_c_1_10 ">106.13</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_17_0" headers="h_c_0_1 " class="">1991</th>
+	<td headers="h_r_17_0 h_c_0_2 h_c_1_2 ">32.69</td>
+	<td headers="h_r_17_0 h_c_0_2 h_c_1_3 ">8.16</td>
+	<td headers="h_r_17_0 h_c_0_2 h_c_1_4 ">96.91</td>
+	<td headers="h_r_17_0 h_c_0_5 h_c_1_5 ">32.45</td>
+	<td headers="h_r_17_0 h_c_0_5 h_c_1_6 ">7.73</td>
+	<td headers="h_r_17_0 h_c_0_5 h_c_1_7 ">97.15</td>
+	<td headers="h_r_17_0 h_c_0_8 h_c_1_8 ">38.28</td>
+	<td headers="h_r_17_0 h_c_0_8 h_c_1_9 ">12.31</td>
+	<td headers="h_r_17_0 h_c_0_8 h_c_1_10 ">106.29</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_18_0" headers="h_c_0_1 " class="">1992</th>
+	<td headers="h_r_18_0 h_c_0_2 h_c_1_2 ">31.64</td>
+	<td headers="h_r_18_0 h_c_0_2 h_c_1_3 ">7.77</td>
+	<td headers="h_r_18_0 h_c_0_2 h_c_1_4 ">94.15</td>
+	<td headers="h_r_18_0 h_c_0_5 h_c_1_5 ">31.43</td>
+	<td headers="h_r_18_0 h_c_0_5 h_c_1_6 ">7.37</td>
+	<td headers="h_r_18_0 h_c_0_5 h_c_1_7 ">94.45</td>
+	<td headers="h_r_18_0 h_c_0_8 h_c_1_8 ">37.09</td>
+	<td headers="h_r_18_0 h_c_0_8 h_c_1_9 ">12.03</td>
+	<td headers="h_r_18_0 h_c_0_8 h_c_1_10 ">102.73</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_19_0" headers="h_c_0_1 " class="">1993</th>
+	<td headers="h_r_19_0 h_c_0_2 h_c_1_2 ">31.39</td>
+	<td headers="h_r_19_0 h_c_0_2 h_c_1_3 ">7.41</td>
+	<td headers="h_r_19_0 h_c_0_2 h_c_1_4 ">94.18</td>
+	<td headers="h_r_19_0 h_c_0_5 h_c_1_5 ">31.09</td>
+	<td headers="h_r_19_0 h_c_0_5 h_c_1_6 ">6.99</td>
+	<td headers="h_r_19_0 h_c_0_5 h_c_1_7 ">94.20</td>
+	<td headers="h_r_19_0 h_c_0_8 h_c_1_8 ">38.04</td>
+	<td headers="h_r_19_0 h_c_0_8 h_c_1_9 ">11.65</td>
+	<td headers="h_r_19_0 h_c_0_8 h_c_1_10 ">107.14</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_20_0" headers="h_c_0_1 " class="">1994</th>
+	<td headers="h_r_20_0 h_c_0_2 h_c_1_2 ">30.92</td>
+	<td headers="h_r_20_0 h_c_0_2 h_c_1_3 ">7.37</td>
+	<td headers="h_r_20_0 h_c_0_2 h_c_1_4 ">92.58</td>
+	<td headers="h_r_20_0 h_c_0_5 h_c_1_5 ">30.56</td>
+	<td headers="h_r_20_0 h_c_0_5 h_c_1_6 ">6.92</td>
+	<td headers="h_r_20_0 h_c_0_5 h_c_1_7 ">92.47</td>
+	<td headers="h_r_20_0 h_c_0_8 h_c_1_8 ">37.74</td>
+	<td headers="h_r_20_0 h_c_0_8 h_c_1_9 ">11.70</td>
+	<td headers="h_r_20_0 h_c_0_8 h_c_1_10 ">105.91</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_21_0" headers="h_c_0_1 " class="">1995</th>
+	<td headers="h_r_21_0 h_c_0_2 h_c_1_2 ">30.55</td>
+	<td headers="h_r_21_0 h_c_0_2 h_c_1_3 ">7.29</td>
+	<td headers="h_r_21_0 h_c_0_2 h_c_1_4 ">91.46</td>
+	<td headers="h_r_21_0 h_c_0_5 h_c_1_5 ">30.09</td>
+	<td headers="h_r_21_0 h_c_0_5 h_c_1_6 ">6.80</td>
+	<td headers="h_r_21_0 h_c_0_5 h_c_1_7 ">91.07</td>
+	<td headers="h_r_21_0 h_c_0_8 h_c_1_8 ">38.18</td>
+	<td headers="h_r_21_0 h_c_0_8 h_c_1_9 ">11.71</td>
+	<td headers="h_r_21_0 h_c_0_8 h_c_1_10 ">107.49</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_22_0" headers="h_c_0_1 " class="">1996</th>
+	<td headers="h_r_22_0 h_c_0_2 h_c_1_2 ">29.49</td>
+	<td headers="h_r_22_0 h_c_0_2 h_c_1_3 ">6.95</td>
+	<td headers="h_r_22_0 h_c_0_2 h_c_1_4 ">88.53</td>
+	<td headers="h_r_22_0 h_c_0_5 h_c_1_5 ">29.05</td>
+	<td headers="h_r_22_0 h_c_0_5 h_c_1_6 ">6.40</td>
+	<td headers="h_r_22_0 h_c_0_5 h_c_1_7 ">88.35</td>
+	<td headers="h_r_22_0 h_c_0_8 h_c_1_8 ">37.13</td>
+	<td headers="h_r_22_0 h_c_0_8 h_c_1_9 ">11.74</td>
+	<td headers="h_r_22_0 h_c_0_8 h_c_1_10 ">103.61</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_23_0" headers="h_c_0_1 " class="">1997</th>
+	<td headers="h_r_23_0 h_c_0_2 h_c_1_2 ">28.21</td>
+	<td headers="h_r_23_0 h_c_0_2 h_c_1_3 ">6.71</td>
+	<td headers="h_r_23_0 h_c_0_2 h_c_1_4 ">84.53</td>
+	<td headers="h_r_23_0 h_c_0_5 h_c_1_5 ">27.62</td>
+	<td headers="h_r_23_0 h_c_0_5 h_c_1_6 ">6.22</td>
+	<td headers="h_r_23_0 h_c_0_5 h_c_1_7 ">83.64</td>
+	<td headers="h_r_23_0 h_c_0_8 h_c_1_8 ">37.43</td>
+	<td headers="h_r_23_0 h_c_0_8 h_c_1_9 ">11.03</td>
+	<td headers="h_r_23_0 h_c_0_8 h_c_1_10 ">106.56</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_24_0" headers="h_c_0_1 " class="">1998</th>
+	<td headers="h_r_24_0 h_c_0_2 h_c_1_2 ">27.54</td>
+	<td headers="h_r_24_0 h_c_0_2 h_c_1_3 ">6.34</td>
+	<td headers="h_r_24_0 h_c_0_2 h_c_1_4 ">83.05</td>
+	<td headers="h_r_24_0 h_c_0_5 h_c_1_5 ">27.01</td>
+	<td headers="h_r_24_0 h_c_0_5 h_c_1_6 ">5.82</td>
+	<td headers="h_r_24_0 h_c_0_5 h_c_1_7 ">82.50</td>
+	<td headers="h_r_24_0 h_c_0_8 h_c_1_8 ">35.53</td>
+	<td headers="h_r_24_0 h_c_0_8 h_c_1_9 ">10.65</td>
+	<td headers="h_r_24_0 h_c_0_8 h_c_1_10 ">100.68</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_25_0" headers="h_c_0_1 " class="">1999</th>
+	<td headers="h_r_25_0 h_c_0_2 h_c_1_2 ">26.61</td>
+	<td headers="h_r_25_0 h_c_0_2 h_c_1_3 ">5.75</td>
+	<td headers="h_r_25_0 h_c_0_2 h_c_1_4 ">81.22</td>
+	<td headers="h_r_25_0 h_c_0_5 h_c_1_5 ">25.98</td>
+	<td headers="h_r_25_0 h_c_0_5 h_c_1_6 ">5.20</td>
+	<td headers="h_r_25_0 h_c_0_5 h_c_1_7 ">80.40</td>
+	<td headers="h_r_25_0 h_c_0_8 h_c_1_8 ">35.21</td>
+	<td headers="h_r_25_0 h_c_0_8 h_c_1_9 ">10.27</td>
+	<td headers="h_r_25_0 h_c_0_8 h_c_1_10 ">100.52</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_26_0" headers="h_c_0_1 " class="">2000</th>
+	<td headers="h_r_26_0 h_c_0_2 h_c_1_2 ">26.64</td>
+	<td headers="h_r_26_0 h_c_0_2 h_c_1_3 ">5.89</td>
+	<td headers="h_r_26_0 h_c_0_2 h_c_1_4 ">80.99</td>
+	<td headers="h_r_26_0 h_c_0_5 h_c_1_5 ">26.17</td>
+	<td headers="h_r_26_0 h_c_0_5 h_c_1_6 ">5.37</td>
+	<td headers="h_r_26_0 h_c_0_5 h_c_1_7 ">80.64</td>
+	<td headers="h_r_26_0 h_c_0_8 h_c_1_8 ">34.36</td>
+	<td headers="h_r_26_0 h_c_0_8 h_c_1_9 ">9.94</td>
+	<td headers="h_r_26_0 h_c_0_8 h_c_1_10 ">98.31</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_27_0" headers="h_c_0_1 " class="">2001</th>
+	<td headers="h_r_27_0 h_c_0_2 h_c_1_2 ">26.01</td>
+	<td headers="h_r_27_0 h_c_0_2 h_c_1_3 ">5.86</td>
+	<td headers="h_r_27_0 h_c_0_2 h_c_1_4 ">78.77</td>
+	<td headers="h_r_27_0 h_c_0_5 h_c_1_5 ">25.43</td>
+	<td headers="h_r_27_0 h_c_0_5 h_c_1_6 ">5.36</td>
+	<td headers="h_r_27_0 h_c_0_5 h_c_1_7 ">77.98</td>
+	<td headers="h_r_27_0 h_c_0_8 h_c_1_8 ">34.52</td>
+	<td headers="h_r_27_0 h_c_0_8 h_c_1_9 ">9.85</td>
+	<td headers="h_r_27_0 h_c_0_8 h_c_1_10 ">99.12</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_28_0" headers="h_c_0_1 " class="">2002</th>
+	<td headers="h_r_28_0 h_c_0_2 h_c_1_2 ">25.62</td>
+	<td headers="h_r_28_0 h_c_0_2 h_c_1_3 ">5.63</td>
+	<td headers="h_r_28_0 h_c_0_2 h_c_1_4 ">77.97</td>
+	<td headers="h_r_28_0 h_c_0_5 h_c_1_5 ">25.02</td>
+	<td headers="h_r_28_0 h_c_0_5 h_c_1_6 ">5.07</td>
+	<td headers="h_r_28_0 h_c_0_5 h_c_1_7 ">77.28</td>
+	<td headers="h_r_28_0 h_c_0_8 h_c_1_8 ">34.14</td>
+	<td headers="h_r_28_0 h_c_0_8 h_c_1_9 ">10.02</td>
+	<td headers="h_r_28_0 h_c_0_8 h_c_1_10 ">97.31</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_29_0" headers="h_c_0_1 " class="">2003</th>
+	<td headers="h_r_29_0 h_c_0_2 h_c_1_2 ">25.27</td>
+	<td headers="h_r_29_0 h_c_0_2 h_c_1_3 ">5.58</td>
+	<td headers="h_r_29_0 h_c_0_2 h_c_1_4 ">76.85</td>
+	<td headers="h_r_29_0 h_c_0_5 h_c_1_5 ">24.66</td>
+	<td headers="h_r_29_0 h_c_0_5 h_c_1_6 ">5.08</td>
+	<td headers="h_r_29_0 h_c_0_5 h_c_1_7 ">75.90</td>
+	<td headers="h_r_29_0 h_c_0_8 h_c_1_8 ">34.10</td>
+	<td headers="h_r_29_0 h_c_0_8 h_c_1_9 ">9.62</td>
+	<td headers="h_r_29_0 h_c_0_8 h_c_1_10 ">98.19</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_30_0" headers="h_c_0_1 " class="">2004</th>
+	<td headers="h_r_30_0 h_c_0_2 h_c_1_2 ">24.49</td>
+	<td headers="h_r_30_0 h_c_0_2 h_c_1_3 ">5.21</td>
+	<td headers="h_r_30_0 h_c_0_2 h_c_1_4 ">74.99</td>
+	<td headers="h_r_30_0 h_c_0_5 h_c_1_5 ">23.94</td>
+	<td headers="h_r_30_0 h_c_0_5 h_c_1_6 ">4.67</td>
+	<td headers="h_r_30_0 h_c_0_5 h_c_1_7 ">74.38</td>
+	<td headers="h_r_30_0 h_c_0_8 h_c_1_8 ">32.29</td>
+	<td headers="h_r_30_0 h_c_0_8 h_c_1_9 ">9.26</td>
+	<td headers="h_r_30_0 h_c_0_8 h_c_1_10 ">92.60</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_31_0" headers="h_c_0_1 " class="">2005</th>
+	<td headers="h_r_31_0 h_c_0_2 h_c_1_2 ">24.14</td>
+	<td headers="h_r_31_0 h_c_0_2 h_c_1_3 ">5.20</td>
+	<td headers="h_r_31_0 h_c_0_2 h_c_1_4 ">73.74</td>
+	<td headers="h_r_31_0 h_c_0_5 h_c_1_5 ">23.49</td>
+	<td headers="h_r_31_0 h_c_0_5 h_c_1_6 ">4.65</td>
+	<td headers="h_r_31_0 h_c_0_5 h_c_1_7 ">72.83</td>
+	<td headers="h_r_31_0 h_c_0_8 h_c_1_8 ">32.81</td>
+	<td headers="h_r_31_0 h_c_0_8 h_c_1_9 ">9.46</td>
+	<td headers="h_r_31_0 h_c_0_8 h_c_1_10 ">93.95</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_32_0" headers="h_c_0_1 " class="">2006</th>
+	<td headers="h_r_32_0 h_c_0_2 h_c_1_2 ">23.56</td>
+	<td headers="h_r_32_0 h_c_0_2 h_c_1_3 ">5.05</td>
+	<td headers="h_r_32_0 h_c_0_2 h_c_1_4 ">72.01</td>
+	<td headers="h_r_32_0 h_c_0_5 h_c_1_5 ">23.02</td>
+	<td headers="h_r_32_0 h_c_0_5 h_c_1_6 ">4.58</td>
+	<td headers="h_r_32_0 h_c_0_5 h_c_1_7 ">71.32</td>
+	<td headers="h_r_32_0 h_c_0_8 h_c_1_8 ">31.62</td>
+	<td headers="h_r_32_0 h_c_0_8 h_c_1_9 ">8.88</td>
+	<td headers="h_r_32_0 h_c_0_8 h_c_1_10 ">91.17</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_33_0" headers="h_c_0_1 " class="">2007</th>
+	<td headers="h_r_33_0 h_c_0_2 h_c_1_2 ">22.96</td>
+	<td headers="h_r_33_0 h_c_0_2 h_c_1_3 ">4.77</td>
+	<td headers="h_r_33_0 h_c_0_2 h_c_1_4 ">70.60</td>
+	<td headers="h_r_33_0 h_c_0_5 h_c_1_5 ">22.40</td>
+	<td headers="h_r_33_0 h_c_0_5 h_c_1_6 ">4.28</td>
+	<td headers="h_r_33_0 h_c_0_5 h_c_1_7 ">69.85</td>
+	<td headers="h_r_33_0 h_c_0_8 h_c_1_8 ">31.36</td>
+	<td headers="h_r_33_0 h_c_0_8 h_c_1_9 ">8.55</td>
+	<td headers="h_r_33_0 h_c_0_8 h_c_1_10 ">91.10</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_34_0" headers="h_c_0_1 " class="">2008</th>
+	<td headers="h_r_34_0 h_c_0_2 h_c_1_2 ">22.55</td>
+	<td headers="h_r_34_0 h_c_0_2 h_c_1_3 ">4.74</td>
+	<td headers="h_r_34_0 h_c_0_2 h_c_1_4 ">69.20</td>
+	<td headers="h_r_34_0 h_c_0_5 h_c_1_5 ">21.99</td>
+	<td headers="h_r_34_0 h_c_0_5 h_c_1_6 ">4.32</td>
+	<td headers="h_r_34_0 h_c_0_5 h_c_1_7 ">68.23</td>
+	<td headers="h_r_34_0 h_c_0_8 h_c_1_8 ">30.96</td>
+	<td headers="h_r_34_0 h_c_0_8 h_c_1_9 ">8.23</td>
+	<td headers="h_r_34_0 h_c_0_8 h_c_1_10 ">90.47</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_35_0" headers="h_c_0_1 " class="">2009</th>
+	<td headers="h_r_35_0 h_c_0_2 h_c_1_2 ">22.24</td>
+	<td headers="h_r_35_0 h_c_0_2 h_c_1_3 ">4.81</td>
+	<td headers="h_r_35_0 h_c_0_2 h_c_1_4 ">67.88</td>
+	<td headers="h_r_35_0 h_c_0_5 h_c_1_5 ">21.76</td>
+	<td headers="h_r_35_0 h_c_0_5 h_c_1_6 ">4.48</td>
+	<td headers="h_r_35_0 h_c_0_5 h_c_1_7 ">67.01</td>
+	<td headers="h_r_35_0 h_c_0_8 h_c_1_8 ">30.19</td>
+	<td headers="h_r_35_0 h_c_0_8 h_c_1_9 ">7.96</td>
+	<td headers="h_r_35_0 h_c_0_8 h_c_1_10 ">88.39</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_36_0" headers="h_c_0_1 " class="">2010</th>
+	<td headers="h_r_36_0 h_c_0_2 h_c_1_2 ">21.92</td>
+	<td headers="h_r_36_0 h_c_0_2 h_c_1_3 ">4.53</td>
+	<td headers="h_r_36_0 h_c_0_2 h_c_1_4 ">67.47</td>
+	<td headers="h_r_36_0 h_c_0_5 h_c_1_5 ">21.33</td>
+	<td headers="h_r_36_0 h_c_0_5 h_c_1_6 ">4.07</td>
+	<td headers="h_r_36_0 h_c_0_5 h_c_1_7 ">66.53</td>
+	<td headers="h_r_36_0 h_c_0_8 h_c_1_8 ">30.16</td>
+	<td headers="h_r_36_0 h_c_0_8 h_c_1_9 ">8.02</td>
+	<td headers="h_r_36_0 h_c_0_8 h_c_1_10 ">88.13</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_37_0" headers="h_c_0_1 " class="">2011</th>
+	<td headers="h_r_37_0 h_c_0_2 h_c_1_2 ">21.54</td>
+	<td headers="h_r_37_0 h_c_0_2 h_c_1_3 ">4.47</td>
+	<td headers="h_r_37_0 h_c_0_2 h_c_1_4 ">66.25</td>
+	<td headers="h_r_37_0 h_c_0_5 h_c_1_5 ">20.93</td>
+	<td headers="h_r_37_0 h_c_0_5 h_c_1_6 ">4.03</td>
+	<td headers="h_r_37_0 h_c_0_5 h_c_1_7 ">65.19</td>
+	<td headers="h_r_37_0 h_c_0_8 h_c_1_8 ">30.15</td>
+	<td headers="h_r_37_0 h_c_0_8 h_c_1_9 ">7.83</td>
+	<td headers="h_r_37_0 h_c_0_8 h_c_1_10 ">88.61</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_38_0" headers="h_c_0_1 " class="">2012</th>
+	<td headers="h_r_38_0 h_c_0_2 h_c_1_2 ">21.26</td>
+	<td headers="h_r_38_0 h_c_0_2 h_c_1_3 ">4.58</td>
+	<td headers="h_r_38_0 h_c_0_2 h_c_1_4 ">64.94</td>
+	<td headers="h_r_38_0 h_c_0_5 h_c_1_5 ">20.71</td>
+	<td headers="h_r_38_0 h_c_0_5 h_c_1_6 ">4.15</td>
+	<td headers="h_r_38_0 h_c_0_5 h_c_1_7 ">64.06</td>
+	<td headers="h_r_38_0 h_c_0_8 h_c_1_8 ">29.38</td>
+	<td headers="h_r_38_0 h_c_0_8 h_c_1_9 ">7.89</td>
+	<td headers="h_r_38_0 h_c_0_8 h_c_1_10 ">85.68</td>
+
+</tr>
+
+<tr class="shaded">
+	<th id="h_r_39_0" headers="h_c_0_1 " class="">2013</th>
+	<td headers="h_r_39_0 h_c_0_2 h_c_1_2 ">20.73</td>
+	<td headers="h_r_39_0 h_c_0_2 h_c_1_3 ">4.41</td>
+	<td headers="h_r_39_0 h_c_0_2 h_c_1_4 ">63.47</td>
+	<td headers="h_r_39_0 h_c_0_5 h_c_1_5 ">20.29</td>
+	<td headers="h_r_39_0 h_c_0_5 h_c_1_6 ">4.07</td>
+	<td headers="h_r_39_0 h_c_0_5 h_c_1_7 ">62.75</td>
+	<td headers="h_r_39_0 h_c_0_8 h_c_1_8 ">28.20</td>
+	<td headers="h_r_39_0 h_c_0_8 h_c_1_9 ">7.32</td>
+	<td headers="h_r_39_0 h_c_0_8 h_c_1_10 ">82.88</td>
+
+</tr>
+
+<tr>
+	<th id="h_r_40_0" headers="h_c_0_1 " class="">2014</th>
+	<td headers="h_r_40_0 h_c_0_2 h_c_1_2 ">20.55</td>
+	<td headers="h_r_40_0 h_c_0_2 h_c_1_3 ">4.36</td>
+	<td headers="h_r_40_0 h_c_0_2 h_c_1_4 ">62.94</td>
+	<td headers="h_r_40_0 h_c_0_5 h_c_1_5 ">20.04</td>
+	<td headers="h_r_40_0 h_c_0_5 h_c_1_6 ">3.96</td>
+	<td headers="h_r_40_0 h_c_0_5 h_c_1_7 ">62.14</td>
+	<td headers="h_r_40_0 h_c_0_8 h_c_1_8 ">28.06</td>
+	<td headers="h_r_40_0 h_c_0_8 h_c_1_9 ">7.54</td>
+	<td headers="h_r_40_0 h_c_0_8 h_c_1_10 ">81.79</td>
+
+</tr>
+
+</tbody></table>
+
+<div id="footnotes" class="short">
+<h5>Footnotes:</h5>
+<p><a name="a"><sup>a</sup></a> US Mortality Files, National Center for Health Statistics, Centers for Disease Control and Prevention.  Rates are per 100,000 and are age-adjusted to the 2000 US Std Population (19 age groups - Census P25-1130).</p>
+<p><a name="-">-</a> Statistic not shown. Rate based on less than 16 cases for the time interval.</p>
+</div><p class="to_top"><a href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html#content">Return to top</a> </p>
+<p style="font-weight:bold;"> Page Navigation:
+	<span style="margin-left:20px;"><a href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.08.html">&lt;&lt; Previous</a></span>
+	<span style="margin-left:20px;"><a href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.10.html">Next &gt;&gt;</a></span>
+</p><hr>
+<!--/body_content-->        </div>
+    </div>
+    
+    <div class="wrapper">
+        <meta http-equiv="last_modified" content="Mon, 10 Apr 2017 11:05:29 -0400">
+    </div>
+</div>
+
+<!-- Blue Footer -->
+<div class="footer" role="contentinfo">
+	<div class="wrapper">
+    	<a class="twitter" href="https://twitter.com/NCICancerStats"><img src="./Line Graph Death Data_files/btn-twitter.jpg" alt="Follow NCICancerStats on Twitter"></a>
+		<p class="linkList"><a href="https://seer.cancer.gov/about/contact.html">Contact Us</a>  |  <a href="https://surveillance.cancer.gov/jobs/">Careers</a>  |  <a href="https://www.cancer.gov/policies">Policies</a>  | <a href="https://www.cancer.gov/policies/accessibility">Accessibility</a>  |  <a href="https://www.cancer.gov/policies/foia">FOIA</a>  |  <a href="https://seer.cancer.gov/sitemap.html">Site Map</a></p>
+        <p>The SEER Website is a service of the <a href="https://surveillance.cancer.gov/">Surveillance Research Program</a>, in <a href="https://cancercontrol.cancer.gov/">NCI's Division of Cancer Control and Population Sciences</a></p>
+        <hr class="double">
+        <p class="linkList"><a href="https://www.hhs.gov/">U.S. Department of Health and Human Services</a>  |  <a href="https://www.nih.gov/">National Institutes of Health</a>  |  <a href="https://www.cancer.gov/">National Cancer Institute</a>  |  <a href="https://www.usa.gov/">USA.gov</a></p>
+        <p>NIH... Turning Discovery Into Health<sup>®</sup></p>
+    </div>
+</div>
+
+<script src="./Line Graph Death Data_files/jquery-ui-1.9.2.custom.min.js.download"></script>
+<script type="text/javascript" src="./Line Graph Death Data_files/validate.js.download"></script>
+<script type="text/javascript" src="./Line Graph Death Data_files/window-opener.js.download"></script>
+
+<!-- NCI WEB ANALYTICS CODE -->
+<script src="./Line Graph Death Data_files/WA_DCCPS_PageLoad.js.download"></script><script type="text/javascript" src="./Line Graph Death Data_files/WA_DCCPS_pre.js.download"></script><script type="text/javascript" src="./Line Graph Death Data_files/s_code.js.download"></script><script type="text/javascript" src="./Line Graph Death Data_files/WA_DCCPS_post.js.download"></script>
+
+ <div class="ui-dialog ui-widget ui-widget-content ui-corner-all" tabindex="-1" role="dialog" aria-labelledby="ui-id-1" style="display: none; outline: 0px; z-index: 1000;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span id="ui-id-1" class="ui-dialog-title">Email This Page</span><a href="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">Close Window</span></a></div><div class="modal modal-emailBox ui-dialog-content ui-widget-content">
+    <div id="emailFormBox">
+        <form id="emailForm" action="https://seer.cancer.gov/csr/1975_2014/browse_csr.php?sectionSEL=4&amp;pageSEL=sect_04_table.09.html" method="get" onsubmit="return emailLinkFormSubmit(this);">
+            <p id="messageBox" class="errorField" style="display: none;"></p>
+            <input type="hidden" name="submitted" value="1">
+            <p><span class="fieldCaption">You can enter up to 10 email addresses (separate with commas)</span>:</p>
+
+            <p><label for="emailTo">Send To: <span>(required)</span></label><br>
+            <input class="txtField emailField  emailFieldMultiple requiredField" id="emailTo" name="emailTo" type="text" title="Recepient Email (required)" maxchars="400" style="width:300px;"> <span id="emailTo_error"></span></p>
+
+            <p><label for="emailFrom">Your Email: <span>(required)</span></label><br>
+            <input class="txtField emailField requiredField" id="emailFrom" name="emailFrom" type="text" title="Your/Sender&#39;s Email (required)" maxchars="100" style="width:300px;"> <span id="emailFrom_error"></span></p>
+
+            <p><input type="checkbox" name="emailCcMe" id="emailCcMe" value="1"><label for="emailCcMe" style="display:inline;"> Email a copy to myself</label></p>
+
+            <p><input class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false" type="submit" value="Send Email"></p>
+            <hr>
+            
+            <p class="info">The information used on this page will not be used to send unsolicited emails or shared with a third party.</p>
+            <span class="hpField"><label for="hpf" style="display:inline;">HPF: </label><input name="hpf" id="hpf" type="text" onfocus="this.blur();"></span>
+        </form>
+    </div>
+</div></div></body></html>

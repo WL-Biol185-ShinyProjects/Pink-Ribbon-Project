@@ -1,0 +1,208 @@
+"Area" "Race" "Deaths"
+"1" "Northeast" "All" 26.2
+"2" "New England" "All" 24.4
+"3" "Connecticut" "All" 23.8
+"4" "Maine" "All" 25.5
+"5" "Massachusetts" "All" 23.5
+"6" "New Hampshire" "All" 28.9
+"7" "Rhode Island" "All" 24.3
+"8" "Vermont" "All" 24.8
+"9" "Middle Atlantic" "All" 26.8
+"10" "New Jersey" "All" 28
+"11" "New York" "All" 24.6
+"12" "Pennsylvania" "All" 29.5
+"13" "Midwest" "All" 26.9
+"14" "East North Central" "All" 27.7
+"15" "Illinois" "All" 26.8
+"16" "Indiana" "All" 25.8
+"17" "Michigan" "All" 29.1
+"18" "Ohio" "All" 29.7
+"19" "Wisconsin" "All" 25.5
+"20" "West North Central" "All" 25
+"21" "Iowa" "All" 25.4
+"22" "Kansas" "All" 24.5
+"23" "Minnesota" "All" 21.6
+"24" "Missouri" "All" 28.5
+"25" "Nebraska" "All" 26.6
+"26" "North Dakota" "All" 18.3
+"27" "South Dakota" "All" 24.1
+"28" "South" "All" 25.8
+"29" "South Atlantic" "All" 27.4
+"30" "Delaware" "All" 27.7
+"31" "District of Columbia" "All" 29.7
+"32" "Florida" "All" 28.5
+"33" "Georgia" "All" 24.9
+"34" "Maryland" "All" 28
+"35" "North Carolina" "All" 25.7
+"36" "South Carolina" "All" 29.2
+"37" "Virginia" "All" 27.1
+"38" "West Virginia" "All" 32.1
+"39" "East South Central" "All" 26.9
+"40" "Alabama" "All" 26.7
+"41" "Kentucky" "All" 25.8
+"42" "Mississippi" "All" 28.5
+"43" "Tennessee" "All" 27.1
+"44" "West South Central" "All" 22.6
+"45" "Arkansas" "All" 28.1
+"46" "Louisiana" "All" 28.2
+"47" "Oklahoma" "All" 26.6
+"48" "Texas" "All" 20.5
+"49" "West" "All" 23
+"50" "Mountain" "All" 22.3
+"51" "Arizona" "All" 23.4
+"52" "Colorado" "All" 20.8
+"53" "Idaho" "All" 23.4
+"54" "Montana" "All" 26.3
+"55" "Nevada" "All" 24.9
+"56" "New Mexico" "All" 23.4
+"57" "Utah" "All" 18
+"58" "Wyoming" "All" 18.2
+"59" "Pacific" "All" 23.3
+"60" "Alaska" "All" 21.2
+"61" "California" "All" 22.8
+"62" "Hawaii" "All" 22.5
+"63" "Oregon" "All" 26.9
+"64" "Washington" "All" 24.5
+"65" "Northeast" "White" 27.9
+"66" "New England" "White" 26.6
+"67" "Connecticut" "White" 25.7
+"68" "Maine" "White" 26.3
+"69" "Massachusetts" "White" 26.5
+"70" "New Hampshire" "White" 30.2
+"71" "Rhode Island" "White" 25.7
+"72" "Vermont" "White" 25.2
+"73" "Middle Atlantic" "White" 28.4
+"74" "New Jersey" "White" 29.9
+"75" "New York" "White" 26.2
+"76" "Pennsylvania" "White" 30.3
+"77" "Midwest" "White" 27.9
+"78" "East North Central" "White" 28.7
+"79" "Illinois" "White" 27.8
+"80" "Indiana" "White" 26.6
+"81" "Michigan" "White" 30.3
+"82" "Ohio" "White" 30.3
+"83" "Wisconsin" "White" 26.9
+"84" "West North Central" "White" 26.2
+"85" "Iowa" "White" 26.5
+"86" "Kansas" "White" 25.6
+"87" "Minnesota" "White" 23.7
+"88" "Missouri" "White" 28.8
+"89" "Nebraska" "White" 28.1
+"90" "North Dakota" "White" 20.3
+"91" "South Dakota" "White" 26.9
+"92" "South" "White" 26.4
+"93" "South Atlantic" "White" 28.7
+"94" "Delaware" "White" 31.4
+"95" "District of Columbia" "White" 14.3
+"96" "Florida" "White" 30.6
+"97" "Georgia" "White" 25.5
+"98" "Maryland" "White" 29.3
+"99" "North Carolina" "White" 26.2
+"100" "South Carolina" "White" 29.7
+"101" "Virginia" "White" 28.2
+"102" "West Virginia" "White" 32
+"103" "East South Central" "White" 26.7
+"104" "Alabama" "White" 27.3
+"105" "Kentucky" "White" 26
+"106" "Mississippi" "White" 27
+"107" "Tennessee" "White" 26.7
+"108" "West South Central" "White" 23
+"109" "Arkansas" "White" 28.3
+"110" "Louisiana" "White" 26
+"111" "Oklahoma" "White" 29.5
+"112" "Texas" "White" 21.1
+"113" "West" "White" 24.7
+"114" "Mountain" "White" 23.6
+"115" "Arizona" "White" 25.4
+"116" "Colorado" "White" 22
+"117" "Idaho" "White" 24.1
+"118" "Montana" "White" 27.5
+"119" "Nevada" "White" 26.5
+"120" "New Mexico" "White" 26
+"121" "Utah" "White" 18
+"122" "Wyoming" "White" 18.6
+"123" "Pacific" "White" 25.3
+"124" "Alaska" "White" 23.6
+"125" "California" "White" 24.4
+"126" "Hawaii" "White" 37.6
+"127" "Oregon" "White" 28.2
+"128" "Washington" "White" 27.2
+"129" "Northeast" "Black" 26.4
+"130" "New England" "Black" 14.7
+"131" "Connecticut" "Black" 20.1
+"133" "Massachusetts" "Black" 9.9
+"137" "Middle Atlantic" "Black" 28.5
+"138" "New Jersey" "Black" 31.6
+"139" "New York" "Black" 26.5
+"140" "Pennsylvania" "Black" 30.5
+"141" "Midwest" "Black" 26.5
+"142" "East North Central" "Black" 27.5
+"143" "Illinois" "Black" 27.8
+"144" "Indiana" "Black" 24.8
+"145" "Michigan" "Black" 28.7
+"146" "Ohio" "Black" 29.2
+"147" "Wisconsin" "Black" 20
+"148" "West North Central" "Black" 22.6
+"150" "Kansas" "Black" 20.9
+"151" "Minnesota" "Black" 10.9
+"152" "Missouri" "Black" 31.1
+"156" "South" "Black" 27.6
+"157" "South Atlantic" "Black" 27.4
+"158" "Delaware" "Black" 21.7
+"159" "District of Columbia" "Black" 44.2
+"160" "Florida" "Black" 23.5
+"161" "Georgia" "Black" 26.2
+"162" "Maryland" "Black" 29.8
+"163" "North Carolina" "Black" 27.8
+"164" "South Carolina" "Black" 29.8
+"165" "Virginia" "Black" 29.7
+"167" "East South Central" "Black" 29.4
+"168" "Alabama" "Black" 26.8
+"169" "Kentucky" "Black" 27.1
+"170" "Mississippi" "Black" 31.6
+"171" "Tennessee" "Black" 31.1
+"172" "West South Central" "Black" 26.6
+"173" "Arkansas" "Black" 30.4
+"174" "Louisiana" "Black" 33.7
+"175" "Oklahoma" "Black" 21.7
+"176" "Texas" "Black" 23.4
+"177" "West" "Black" 25.4
+"178" "Mountain" "Black" 19.6
+"179" "Arizona" "Black" 22.5
+"180" "Colorado" "Black" 16.9
+"183" "Nevada" "Black" 21.6
+"187" "Pacific" "Black" 27.2
+"189" "California" "Black" 29
+"192" "Washington" "Black" 14.5
+"193" "Northeast" "Hispanic" 10.3
+"194" "New England" "Hispanic" 6.7
+"195" "Connecticut" "Hispanic" 7
+"197" "Massachusetts" "Hispanic" 6.8
+"201" "Middle Atlantic" "Hispanic" 11.2
+"202" "New Jersey" "Hispanic" 10.8
+"203" "New York" "Hispanic" 12
+"204" "Pennsylvania" "Hispanic" 8.7
+"205" "Midwest" "Hispanic" 6
+"206" "East North Central" "Hispanic" 6.7
+"207" "Illinois" "Hispanic" 6.9
+"208" "Indiana" "Hispanic" 8.2
+"209" "Michigan" "Hispanic" 10.2
+"212" "West North Central" "Hispanic" 4
+"220" "South" "Hispanic" 11.1
+"221" "South Atlantic" "Hispanic" 11.9
+"224" "Florida" "Hispanic" 17
+"225" "Georgia" "Hispanic" 3.9
+"229" "Virginia" "Hispanic" 5.9
+"231" "East South Central" "Hispanic" 4.8
+"236" "West South Central" "Hispanic" 10.9
+"240" "Texas" "Hispanic" 11.2
+"241" "West" "Hispanic" 10.6
+"242" "Mountain" "Hispanic" 10.9
+"243" "Arizona" "Hispanic" 10.9
+"244" "Colorado" "Hispanic" 12.9
+"247" "Nevada" "Hispanic" 5.9
+"248" "New Mexico" "Hispanic" 15.8
+"251" "Pacific" "Hispanic" 10.5
+"253" "California" "Hispanic" 10.8
+"255" "Oregon" "Hispanic" 7.5
+"256" "Washington" "Hispanic" 6.3
