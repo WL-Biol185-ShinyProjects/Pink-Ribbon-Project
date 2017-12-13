@@ -22,12 +22,11 @@ colnames(death_rate_time) <- c("Year", "All Ages", "Ages <50", "Ages 50+")
 gathered_death_fixed <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
 gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
 
-annual_incidence_1_ <- read_xlsx("annual_incidence(1).xlxs")
+annual_incidence_1_ <- read_xlsx("annual_incidence (1).xlxs")
 gathered_incidence_line <- gather(annual_incidence_1_, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
 gathered_incidence_line <- read.table("Gathered Incidence 2")
 
 zip_code_states <- read.csv("zip_codes_states.csv")
-zip_codes_states <-
   zip_codes_states %>%
   left_join(breastcancer_bycounty_edited2, by = c("county" = "County"))
 final_breastcancer <- read.table("Final Breast Cancer2")
