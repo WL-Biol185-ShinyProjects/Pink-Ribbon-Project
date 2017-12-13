@@ -5,6 +5,8 @@ library(readr)
 library(readxl)
 library(shinythemes)
 library(extrafont)
+library(tidyverse)
+
 shiny::tags
 
 breastcancerates2 <- read.csv("Barplot Incidence Data" , header = TRUE)
