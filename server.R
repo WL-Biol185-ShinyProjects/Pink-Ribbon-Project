@@ -24,7 +24,7 @@ output$RacePlot <- renderPlot({
 
 
 #Tyding data for breast cancer death plot histogram 
-read_xlsx("death.xlsx")
+death <- read_xlsx("death.xlsx")
 gathered_death2 <- gather(death, key = "Race", value = "Deaths", 2:5, na.rm= TRUE)
 gathered_death2 <- read.table("Gathered DeathPlot Data")
 
@@ -42,7 +42,7 @@ gathered_death2 <- read.table("Gathered DeathPlot Data")
 
 #Server for line graphs
      #data for mortality line graph
-    read_xlsx("death_rate_time.xlsx")
+death_rate_time <- read_xlsx("death_rate_time.xlsx")
 colnames(death_rate_time) <- c("Year", "All Ages", "Ages <50", "Ages 50+")
 gathered_death_fixed <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
 gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
@@ -63,7 +63,7 @@ gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
   })
 
   #Server logic for line plot of breast cancer incidence over time
-  read_xlsx("annual_incidence(1).xlxs")
+ annual_incidence_1_ <- read_xlsx("annual_incidence(1).xlxs")
  gathered_incidence_line <- gather(annual_incidence_1_, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
  gathered_incidence_line <- read.table("Gathered Incidence 2")
   
@@ -84,12 +84,12 @@ gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
      })
  
  #data tidying, creating table to run in server for map by county
- read.csv("zip_codes_states.csv")
-zip_codes_states <-
+zip_code_states <- read.csv("zip_codes_states.csv")
 zip_codes_states %>%
 left_join(breastcancer_bycounty_edited2, by = c("county" = "County"))
-final_breastcancer$popupColumn <- paste("<p>", final_breastcancer$County, final_breastcancer$zip_code, "</p>", "<p> Age-Adjusted Incidence Rate- cases per 100,000: ", final_breastcancer$`Age-Adjusted Incidence Rate - cases per 100,000`, "</p>", "<p> Average Annual Count: ", final_breastcancer$`Average Annual Count`, "</p>", "<p> Recent 5-Year Trend in Incidence Rates: ", final_breastcancer$`Recent 5-Year Trend in Incidence Rates`, "</p>", sep= " ")
 final_breastcancer <- read.table("Final Breast Cancer2")
+final_breastcancer$popupColumn <- paste("<p>", final_breastcancer$County, final_breastcancer$zip_code, "</p>", "<p> Age-Adjusted Incidence Rate- cases per 100,000: ", final_breastcancer$`Age-Adjusted Incidence Rate - cases per 100,000`, "</p>", "<p> Average Annual Count: ", final_breastcancer$`Average Annual Count`, "</p>", "<p> Recent 5-Year Trend in Incidence Rates: ", final_breastcancer$`Recent 5-Year Trend in Incidence Rates`, "</p>", sep= " ")
+
  
  #Server for map by county
  output$mymap <- renderLeaflet({
