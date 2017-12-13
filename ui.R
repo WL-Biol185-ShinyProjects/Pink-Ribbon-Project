@@ -7,6 +7,26 @@ library(shinythemes)
 library(extrafont)
 shiny::tags
 
+breastcancerates2 <- read.csv("Barplot Incidence Data" , header = TRUE)
+gathered_data <- gather(breastcancerates2, key = "Race", value = "Incidence", 3:6, na.rm= TRUE)
+
+gathered_death2 <- gather(death, key = "Race", value = "Deaths", 2:5, na.rm= TRUE)
+gathered_death2 <- read.table("Gathered DeathPlot Data")
+
+colnames(death_rate_time) <- c("Year", "All Ages", "Ages <50", "Ages 50+")
+gathered_death_fixed <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
+gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
+
+gathered_incidence_line <- gather(annual_incidence_1_, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
+gathered_incidence_line <- read.table("Gathered Incidence 2")
+
+zip_codes_states <-
+  zip_codes_states %>%
+  left_join(breastcancer_bycounty_edited2, by = c("county" = "County"))
+final_breastcancer$popupColumn <- paste("<p>", final_breastcancer$County, final_breastcancer$zip_code, "</p>", "<p> Age-Adjusted Incidence Rate- cases per 100,000: ", final_breastcancer$`Age-Adjusted Incidence Rate - cases per 100,000`, "</p>", "<p> Average Annual Count: ", final_breastcancer$`Average Annual Count`, "</p>", "<p> Recent 5-Year Trend in Incidence Rates: ", final_breastcancer$`Recent 5-Year Trend in Incidence Rates`, "</p>", sep= " ")
+final_breastcancer <- read.table("Final Breast Cancer2")
+
+
 
 dashboardPage(skin = "purple",
       dashboardHeader(title = "Pink Ribbon Project", titleWidth = 350),
