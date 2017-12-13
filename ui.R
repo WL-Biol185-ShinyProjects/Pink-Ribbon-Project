@@ -7,7 +7,7 @@ library(shinythemes)
 library(extrafont)
 shiny::tags
 
-# pinkribbon <- readJPEG(system.file("img", "logo.fw.png", package = "jpeg"), TRUE)
+bio185::publishApp("Pink-Ribbon-Project")
 dashboardPage(skin = "purple",
       dashboardHeader(title = "Pink Ribbon Project", titleWidth = 350),
       dashboardSidebar(
