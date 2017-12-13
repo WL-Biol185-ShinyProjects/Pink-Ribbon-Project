@@ -2,7 +2,7 @@ library(shiny)
 library(tidyverse)
 library(ggplot2)
 library(leaflet)
-
+library(readxl)
 
 function(input, output) {
 
@@ -42,6 +42,7 @@ gathered_death2 <- read.table("Gathered DeathPlot Data")
 
 #Server for line graphs
      #data for mortality line graph
+    read_xlsx("death_rate_time.xlsx")
 colnames(death_rate_time) <- c("Year", "All Ages", "Ages <50", "Ages 50+")
 gathered_death_fixed <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
 gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
@@ -62,6 +63,7 @@ gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
   })
 
   #Server logic for line plot of breast cancer incidence over time
+  read_xlsx("annual_incidence(1).xlxs")
  gathered_incidence_line <- gather(annual_incidence_1_, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
  gathered_incidence_line <- read.table("Gathered Incidence 2")
   
@@ -82,6 +84,7 @@ gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
      })
  
  #data tidying, creating table to run in server for map by county
+ read.csv("zip_codes_states.csv")
 zip_codes_states <-
 zip_codes_states %>%
 left_join(breastcancer_bycounty_edited2, by = c("county" = "County"))
