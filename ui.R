@@ -4,10 +4,10 @@ library(shinydashboard)
 library(readr)
 library(readxl)
 library(shinythemes)
-library(extrafont)
+require(extrafont)
 shiny::tags
 
-bio185::publishApp("Pink-Ribbon-Project")
+
 dashboardPage(skin = "purple",
       dashboardHeader(title = "Pink Ribbon Project", titleWidth = 350),
       dashboardSidebar(
@@ -269,7 +269,7 @@ dashboardPage(skin = "purple",
             a("Map By County Data.html", href = "https://statecancerprofiles.cancer.gov/incidencerates/index.php?stateFIPS=99&cancer=055&race=00&age=001&type=incd&sortVariableName=rate&sortOrder=default#results", style = "font-size: 15px"),
             br(),
             br(), 
-            p("We would also like to shoutout to Gregg who answered all of our questions in a timely manner!", style = "font-size: 15px"), 
+            p("We would also like to give a shoutout to Gregg Whitworth who answered all of our questions in a timely manner!", style = "font-size: 15px"), 
             br(),
             br(), 
             img(src= "Gregg.jpg", height = 400, width = 300, align= "center")
