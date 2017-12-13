@@ -22,7 +22,7 @@ colnames(death_rate_time) <- c("Year", "All Ages", "Ages <50", "Ages 50+")
 gathered_death_fixed <- gather(death_rate_time, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
 gathered_death_fixed <- read.table("Line Graph Gathered Death Table")
 
-annual_incidence_1_ <- read_xlsx("annual_incidence (1).xlxs")
+annual_incidence_1_ <- read_xlsx("annual_incidence (1).xlsx")
 gathered_incidence_line <- gather(annual_incidence_1_, key = "Age", value = "Rate", 2:4, na.rm = TRUE)
 gathered_incidence_line <- read.table("Gathered Incidence 2")
 
