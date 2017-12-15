@@ -28,10 +28,12 @@ gathered_incidence_line <- read.table("Gathered Incidence 2")
 
 zip_code_states <- read.csv("zip_codes_states.csv")
 breastcancer_bycounty_edited2 <- read_xlsx("breastcancer_bycounty_edited2.xlsx")
-  zip_code_states %>%
-  left_join(breastcancer_bycounty_edited2, by = c("county" = "County"))
+zip_code_states %>%
+left_join(breastcancer_bycounty_edited2, by = c("county" = "County"))
 final_breastcancer <- read.table("Final Breast Cancer2")
 final_breastcancer$popupColumn <- paste("<p>", final_breastcancer$County, final_breastcancer$zip_code, "</p>", "<p> Age-Adjusted Incidence Rate- cases per 100,000: ", final_breastcancer$`Age-Adjusted Incidence Rate - cases per 100,000`, "</p>", "<p> Average Annual Count: ", final_breastcancer$`Average Annual Count`, "</p>", "<p> Recent 5-Year Trend in Incidence Rates: ", final_breastcancer$`Recent 5-Year Trend in Incidence Rates`, "</p>", sep= " ")
+
+
 
 
 
